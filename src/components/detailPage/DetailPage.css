@@ -162,10 +162,11 @@
 }
 
 .appreciation-details-img {
-    width: 750px;
+    /* width: 750px; */
     height: 700px;
     object-fit: fill;
     border-radius: 15px;
+    width: calc(100vw - 54vw);
 }
 
 .appreciation-details-small-img {
@@ -280,6 +281,7 @@
     font-style: normal;
     font-weight: 700;
     line-height: 32px;
+    margin-top: 7px;
 }
 
 .appreciation-invest-rental-sub-text {
@@ -287,7 +289,7 @@
     font-size: 12px;
     font-style: normal;
     font-weight: 400;
-    line-height: 32px;
+    line-height: 1.2;
 }
 
 .appreciation-unit-purchase-text {
