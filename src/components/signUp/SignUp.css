@@ -1,0 +1,128 @@
+.signup-root {
+    background-color: #ffffff;
+    margin-top: 96px;
+}
+
+.signup-main-container {
+    width: 360px;
+    padding: 3% 0 0;
+    margin: auto;
+}
+
+.signup-mobile-txt {
+    color: #000;
+    font-size: 28px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 16px;
+    text-align: center;
+}
+
+.signup-form-container {
+    margin-top: 4rem;
+}
+
+.mobile-txt {
+    color: #474747;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 16px;
+}
+
+.appLinkForm {
+    border-radius: 10px;
+    border: 1px solid #474747;
+    background-color: #fff;
+    display: flex;
+    flex-direction: row;
+    padding: 13px 13px;
+    align-items: center;
+    margin-top: 20px;
+    justify-content: space-between;
+}
+
+.mobileInputContainer {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+  
+.mobileInputContainer > input,
+.mobileInputContainer > input:focus {
+    outline: none;
+    border: none;
+    max-width: 16.5rem;
+    margin-left: 0.625rem;
+    min-width: 16.5rem;
+    font-size: 16px;
+}
+
+.flag {
+    width: 20px;
+    height: 20px;
+    padding-right: 0.625rem;
+    object-fit: contain;
+}
+
+.getAppLink {
+    font-size: 0.875rem;
+    font-weight: 600;
+    font-stretch: normal;
+    font-style: normal;
+    letter-spacing: 0.0081rem;
+    text-align: left;
+    color: #e73c33;
+    border: solid 0.0625rem #e3ecf8;
+    background-color: #fff;
+    padding: 0.625rem 0.625rem;
+    cursor: pointer;
+}
+
+.signup-continue-btn {
+    border-radius: 65px;
+    background: #3384F2;
+    border: 1px solid #3384F2;
+    color: #fff;
+    width: 100%;
+    padding: 15px;
+    margin-top: 20px;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 16px;
+}
+
+.signup-footer-main-root {
+    position: fixed;
+    bottom: 0;
+    padding: 30px 30px 80px;
+    width: 100%;
+    text-align: center;
+}
+
+.protected-main-root {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+    justify-content: center;
+}
+
+.learn-more-txt {
+    color: #3384F2;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1.5;
+    margin-top: 5px;
+    margin-bottom: 25px;
+}
+
+.info-protected-txt {
+    color: #000000;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1.5;
+}
