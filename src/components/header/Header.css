@@ -109,6 +109,28 @@
     font-style: normal;
 }
 
+.dropdown-item-active {
+    padding: 0px 5px;
+    font-size: medium;
+    font-weight: 500;
+    font-stretch: normal;
+    font-style: normal;
+    letter-spacing: 0.15px;
+    text-align: left;
+    line-height: 2em;
+}
+
+.itemNameBlack {
+    margin: 10px;
+    color: #000;
+}
+
+.itemNameBlack:hover {
+    background-color: grey;
+    color: #fff;
+    cursor: pointer;
+}
+
 @media (min-width: 1024px) {
     .header-announcement-bar-wrapper {
         height: 6rem;
@@ -160,6 +182,10 @@
         pointer-events: none;
         line-height: 2.5em !important;
         font-size: 1em !important;
+    }
+
+    .header-element:last-child {
+        margin-right: 35px;
     }
     
     :is([aria-current="page"], [aria-current="true"]) .header-element-item-active {

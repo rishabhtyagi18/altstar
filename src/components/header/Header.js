@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import './Header.css';
+import DropDownMenu from '../dropDownMenu/DropDownMenu';
 
 const Header = (props) => {
 
@@ -45,12 +46,23 @@ const Header = (props) => {
                             </div>
 
                             <div className="header-element">
-                                <a>
+                                {/* <a>
                                     <div className="header-element-item-active">Resources</div>
-                                </a>
+                                </a> */}
+                                 <DropDownMenu parentString="Resources" style={props.logoShort ? { fontSize: '1rem' } : null}>
+                                    <a>
+                                        <div className="dropdown-item-active itemNameBlack">FAQs</div>
+                                    </a>
+                                    <a>
+                                        <div className="dropdown-item-active itemNameBlack">Knowledge Centre</div>
+                                    </a>
+                                    <a>
+                                        <div className="dropdown-item-active itemNameBlack">Contact Us</div>
+                                    </a>
+                                </DropDownMenu>
                             </div>
 
-                            <div className="header-element">
+                            {/* <div className="header-element">
                                 <a>
                                     <div className="header-element-item-active">Legal compliance</div>
                                 </a>
@@ -60,15 +72,15 @@ const Header = (props) => {
                                 <a>
                                     <div className="header-element-item-active">Contact us</div>
                                 </a>
-                            </div>
-                        </div>
-
-                        <div className="header-cta-connect">
-                            <a href="/sign-up" className="header-cta-connect-signup">SIGN UP</a>
+                            </div> */}
                         </div>
 
                         <div className="header-cta-connect">
                             <a className="header-cta-connect-atag">LOG IN</a>
+                        </div>
+
+                        <div className="header-cta-connect">
+                            <a href="/sign-up" className="header-cta-connect-signup">SIGN UP</a>
                         </div>
                     </div>
                 </div>

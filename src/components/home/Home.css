@@ -381,7 +381,7 @@
     text-transform: uppercase;
     padding-top: 0px;
     color: #ffffff;
-    width: 50%;
+    width: 55%;
     margin-block-start: 0;
     margin-block-end: 10px;
 }
@@ -639,6 +639,11 @@
     height: 25px;
     object-fit: contain;
     top: 7px;
+}
+
+.altstar-rooyt-list-items {
+    margin: 0;
+    padding-inline-start: 20px;
 }
 
 @media (min-width: 1024px) {

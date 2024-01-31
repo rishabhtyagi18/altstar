@@ -14,17 +14,17 @@ return (
             <div className="home-section-background home-desk-root">
                     <img src="https://images.squarespace-cdn.com/content/v1/5ee1e788c9545837ba7c4bde/1598618438842-15KYYL4CRXDV05HZEHT7/banner.jpg?format=2500w" alt="banner" />
                     <div className="home-story-content home-text-first">
-                        <p className="home-investment-text">Empowering Investment Journeys</p>
-                        <p className="home-story-text">Every Size, Every Goal.</p>
-                        <button className="home-learn-btn">LEARN MORE</button>
+                        {/* <p className="home-investment-text">Empowering Investment Journeys</p> */}
+                        <p className="home-story-text">Smart investing in Real estate</p>
+                        <button className="home-learn-btn">View Opportunities</button>
                     </div>
                 </div>
 
             <div className="home-content-wrapper">
                 <div className="sqs-layout sqs-art-desk-gallery">
                     <h2>Welcome to Altstar</h2>
-                    <p className="sqsrte-large">We are on a mission to revolutionize real estate investment. <br></br> Our vision goes beyond traditional boundaries, unlocking a world <br></br> of opportunities for investors of all sizes.</p>
-                    <p className="sqsrte-large">Altstar stands as a beacon of innovation, making institutional-quality <br></br> real estate investments accessible to everyone.</p>
+                    <p className="sqsrte-large">We are on a mission to curate and offer the most attractive real estate <br></br>  investment opportunities traditionally accessible only to institutional <br></br> investors to retail investors at a click enabling them to build a diversified <br></br> real estate portfolio thereby enabling them to building a brighter financial future.</p>
+                    {/* <p className="sqsrte-large">Altstar stands as a beacon of innovation, making institutional-quality <br></br> real estate investments accessible to everyone.</p> */}
                 </div>
             </div>
             
@@ -43,40 +43,51 @@ return (
                         <div className="altstar-diff-container">
                             <div className="altstar-diff-subcontainer">
                                 <img src="https://gomechprod.blob.core.windows.net/websiteasset/New%20Website/components/carEnquiry/Best-Prices.svg" alt="img" className="choose-altstar-img" />
-                                <div className="altstar-container-heading">Unlock Exclusive Opportunities:</div>
-                                <div className="alstar-container-subheading">Explore real estate investments with Altstar and unlock opportunities that cater to investors of every size. Our platform brings institutional-quality deals to your fingertips.</div>
+                                <div className="altstar-container-heading">Build a Diversified Real Estate Portfolio</div>
+                                <div className="alstar-container-subheading">Our fractional ownership model enables investors to own a share of institutional quality real estate with lower minimum investments and build a diversified real estate portfolio not having to worry about managing the property.</div>
                             </div>
 
                             <div className="altstar-diff-subcontainer">
                                 <img src="https://gomechprod.blob.core.windows.net/websiteasset/New%20Website/components/carEnquiry/Best-Prices.svg" alt="img" className="choose-altstar-img" />
-                                <div className="altstar-container-heading">Tailored for You:</div>
-                                <div className="alstar-container-subheading">Altstar understands that every investor is unique. Our platform offers a personalized experience, aligning investments with your goals and preferences.</div>
+                                <div className="altstar-container-heading">Proactive Asset Management</div>
+                                <div className="alstar-container-subheading">Our team has end to end capabilities as developer, owner and operator of different real estate asset classes and have worked across several economic cycles. We utilize proprietary technology and systems that analyze market and property level data to make better, faster investment and asset management decisions.</div>
                             </div>
 
                             <div className="altstar-diff-subcontainer">
                                 <img src="https://gomechprod.blob.core.windows.net/websiteasset/New%20Website/components/carEnquiry/Best-Prices.svg" alt="img" className="choose-altstar-img" />
-                                <div className="altstar-container-heading">Transparent, Frictionless, Secure:</div>
-                                <div className="alstar-container-subheading">Invest with confidence on Altstar. Our platform is designed to be user-friendly, transparent, providing a frictionless and secure investmen experience from start to finish.</div>
+                                <div className="altstar-container-heading">Experienced team with proven track record</div>
+                                <div className="alstar-container-subheading">
+                                    <ul className="altstar-rooyt-list-items">
+                                        <li>With over 40 years of combined experience, our team brings a wealth of knowledge and a track record of success in the real estate investing.</li>
+                                        <li>Over USD 3 BN of Assets managed by the leadership team across multiple asset classes and cities.</li>
+                                        <li>Led by Industry veterans – Our leadership team hails from top tier real estate firms such as Apollo, JP Morgan, Xander and VR.</li>
+                                    </ul>
+                                </div>
                             </div>
                         </div>
 
                         <div className="altstar-diff-container">
                             <div className="altstar-diff-subcontainer">
                                 <img src="https://gomechprod.blob.core.windows.net/websiteasset/New%20Website/components/carEnquiry/Best-Prices.svg" alt="img" className="choose-altstar-img" />
-                                <div className="altstar-container-heading">Potential for Liquidity:</div>
-                                <div className="alstar-container-subheading">Adaptability is key. Altstar not only guides you through curated investment opportunities but also provides potential liquidity options. Enjoy the flexibility to reshape your investment strategy as your financial landscape evolves.</div>
+                                <div className="altstar-container-heading">Secondary market. Potential liquidity</div>
+                                <div className="alstar-container-subheading">altstar’s secondary market matches buyers and sellers of private real estate. We offer the potential for liquidity every quarter, providing flexibility to our investors.</div>
                             </div>
 
                             <div className="altstar-diff-subcontainer">
                                 <img src="https://gomechprod.blob.core.windows.net/websiteasset/New%20Website/components/carEnquiry/Best-Prices.svg" alt="img" className="choose-altstar-img" />
-                                <div className="altstar-container-heading">Excellence, Transparency, Returns:</div>
-                                <div className="alstar-container-subheading">Altstar is committed to delivering excellence in every aspect. From transparent dealings to consistent returns, we stand by our promise and are committed to their financial success.</div>
+                                <div className="altstar-container-heading">Stringent selection criteria before listing</div>
+                                <div className="alstar-container-subheading">
+                                    <ul className="altstar-rooyt-list-items">
+                                        <li>Each investment is subject to a rigorous vetting process and due diligence, ensuring only the highest quality opportunities are selected</li>
+                                        <li>Extensive networks build over the last decade help is sourcing the most attractive investments</li>
+                                    </ul>
+                                </div>
                             </div>
 
                             <div className="altstar-diff-subcontainer">
                                 <img src="https://gomechprod.blob.core.windows.net/websiteasset/New%20Website/components/carEnquiry/Best-Prices.svg" alt="img" className="choose-altstar-img" />
-                                <div className="altstar-container-heading">Your Gateway to a Seamless Future:</div>
-                                <div className="alstar-container-subheading">Altstar isn't just a platform; it's your gateway to a future of seamless real estate investment. Join us in redefining the landscape, making real estate opportunities accessible to everyone.</div>
+                                <div className="altstar-container-heading">Robust and secure platform</div>
+                                <div className="alstar-container-subheading">State of the art technology to ensure the highest level of security for your investments, safeguarding both your financial and personal data.</div>
                             </div>
                         </div>
                     </div>
@@ -85,7 +96,7 @@ return (
 
             <div className="home-content-choose-wrapper">
                 <div className="sqs-layout sqs-commitment-roots">
-                    <h2>Your Trust, Our Commitment</h2>
+                    {/* <h2>Your Trust, Our Commitment</h2> */}
                     <div className="altstar-diff-container">
                         <div>
                             <div className="commitment-wrapper-heading">100+</div>
