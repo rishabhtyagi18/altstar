@@ -9,10 +9,11 @@ return (
         <div className="about-us-root">
            
             <div className="aboutUs-section-background aboutUs-desk-root">
-                <img src="https://images.squarespace-cdn.com/content/v1/5ee1e788c9545837ba7c4bde/1598618438842-15KYYL4CRXDV05HZEHT7/banner.jpg?format=2500w" alt="banner" />
+                <img src="../assets/Altstar-Banner.png" alt="banner" />
                 <div className="aboutUs-story-content aboutUs-text-first">
-                    <p className="aboutUs-investment-text">Empowering Investment Journeys</p>
-                    <p className="aboutUs-story-text">Every Size, Every Goal.</p>
+                    {/* <p className="aboutUs-investment-text">Empowering Investment Journeys</p> */}
+                    {/* <p className="aboutUs-story-text">Every Size, Every Goal.</p> */}
+                    <p className="aboutUs-story-text">Smart investing in Real estate</p>
                     <button className="aboutUs-learn-btn">LEARN MORE</button>
                 </div>
             </div>

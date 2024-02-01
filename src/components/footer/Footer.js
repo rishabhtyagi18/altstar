@@ -8,7 +8,7 @@ const Footer = (props) => {
             <div className="content">
                 <div className="footer-main-container">
                     <div className="">
-                        <img src="../assets/logo.png" alt="logo" className="footer-logo" />
+                        <img src="../assets/Altstar-Logo.png" alt="logo" className="footer-logo" />
                     </div>
 
                     <div className="footer-links-container">

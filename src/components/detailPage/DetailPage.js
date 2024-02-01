@@ -8,7 +8,7 @@ return (
         <div className="detailPage-root">
            
             <div className="detailPage-section-background aboutUs-desk-root">
-                <img src="https://images.squarespace-cdn.com/content/v1/5ee1e788c9545837ba7c4bde/1598618438842-15KYYL4CRXDV05HZEHT7/banner.jpg?format=2500w" alt="banner" />
+                <img src="../assets/Altstar-Banner.png" alt="banner" />
                 <div className="detailPage-story-content detailPage-text-first">
                     <p className="detailPage-investment-text">Empowering Investment Journeys</p>
                     <p className="detailPage-story-text">Every Size, Every Goal.</p>

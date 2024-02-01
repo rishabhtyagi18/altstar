@@ -21,7 +21,7 @@ const Header = (props) => {
                 >
                     <div>
                         <a href="/" className="altstar-home-anchor">
-                            <div className="altstar-anchor-txt">Altstar</div>
+                            <img src="../assets/Altstar-Logo-No-circle.png" className="altstar-anchor-txt" />
                         </a>
                     </div>
 

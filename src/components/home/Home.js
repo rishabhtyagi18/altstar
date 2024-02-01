@@ -12,7 +12,7 @@ return (
     <>  
         <div className="home-root">
             <div className="home-section-background home-desk-root">
-                    <img src="https://images.squarespace-cdn.com/content/v1/5ee1e788c9545837ba7c4bde/1598618438842-15KYYL4CRXDV05HZEHT7/banner.jpg?format=2500w" alt="banner" />
+                    <img src="../assets/Altstar-Banner.png" alt="banner" />
                     <div className="home-story-content home-text-first">
                         {/* <p className="home-investment-text">Empowering Investment Journeys</p> */}
                         <p className="home-story-text">Smart investing in Real estate</p>
@@ -125,7 +125,7 @@ return (
             <div className="home-content-choose-wrapper">
                 <div className="sqs-layout sqs-commitment-roots">
                     <p className="choose-altstar-txt">OUR PLATFORM</p>
-                    <h2>Discover Altstar's Tech Edge</h2>
+                    {/* <h2>Discover Altstar's Tech Edge</h2> */}
                     <div>Explore key features that drive Altstar's innovation:</div>
                     <ul className="altstar-platform-container">
                         <li className="platform-list">Intuitive Interface</li>

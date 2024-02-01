@@ -33,6 +33,7 @@
     pointer-events: auto;
     padding: 12vw;
     transition: padding 140ms ease-in-out;
+    box-shadow: 0 1px 8px 0 rgba(0,0,0,0.1);
 }
 
 .header-navbar-container {
@@ -103,10 +104,13 @@
 }
 
 .altstar-anchor-txt {
-    font-size: 2rem;
+    /* font-size: 2rem;
     color: #000;
     line-height: 1.2;
-    font-style: normal;
+    font-style: normal; */
+    width: 130px;
+    height: 130px;
+    object-fit: contain;
 }
 
 .dropdown-item-active {
