@@ -41,7 +41,7 @@
 }
 
 .home-content-choose-wrapper {
-    padding-top: 1.3vmax;
+    padding-top: 7vmax;
     padding-bottom: 1.3vmax;
     justify-content: left;
     padding-right: 12vmax;
@@ -84,7 +84,7 @@
     padding-bottom: 3px;
     display: block;
     text-align: left;
-    font-size: 2.5rem;
+    font-size: 5rem;
     line-height: calc(1.4em * (1 + (1 - 2)/25));
     text-transform: capitalize;
     font-weight: 400;
@@ -95,10 +95,12 @@
     color: #000000;
     text-align: left;
     word-wrap: break-word;
-    line-height: 1.2;
+    line-height: 1.5;
     margin: 0;
     font-size: 1.1rem;
-    font-weight: 300;
+    font-weight: 200;
+    letter-spacing: 4px;
+    text-transform: uppercase;
 }
 
 .home-aboutus-wrapper {
@@ -112,6 +114,39 @@
     box-sizing: content-box;
     position: relative;
     color: #000000;
+    justify-content: center;
+}
+
+.home-aboutus-wrapper-process {
+    padding-top: 1vmax;
+    padding-bottom: 7vmax;
+    justify-content: left;
+    padding-right: 12vmax;
+    padding-left: 12vmax;
+    margin: 0 auto;
+    display: flex;
+    box-sizing: content-box;
+    position: relative;
+    color: #000000;
+    justify-content: center;
+}
+
+.platform-graph-container {
+    margin-top: 50px;
+}
+
+.home-aboutus-wrapper-learn {
+    padding-top: 2vmax;
+    padding-bottom: 2.3vmax;
+    justify-content: left;
+    padding-right: 12vmax;
+    padding-left: 12vmax;
+    margin: 0 auto;
+    display: flex;
+    box-sizing: content-box;
+    position: relative;
+    color: #000000;
+    justify-content: center;
 }
 
 .sqs-layout {
@@ -126,56 +161,81 @@
     white-space: pre-wrap;
     padding-bottom: 3px;
     display: block;
-    text-align: left;
-    font-size: 2rem;
+    text-align: center;
+    font-size: 3.5rem;
     line-height: calc(1.4em * (1 + (1 - 2)/25));
     text-transform: capitalize;
-    font-weight: 400;
-    margin: 8px 0 20px;
+    font-weight: 300;
+    margin: 30px 0 50px;
+}
+
+.sqs-layout-welcome h2 {
+    white-space: pre-wrap;
+    padding-bottom: 3px;
+    display: block;
+    text-align: center;
+    font-size: 3.5rem;
+    line-height: calc(1.4em * (1 + (1 - 2)/25));
+    text-transform: capitalize;
+    font-weight: 300;
+    margin: 30px 0 20px;
 }
 
 .altstar-container-heading {
     color: #000000;
     text-align: left;
-    white-space: nowrap;
+    /* white-space: nowrap; */
     word-wrap: break-word;
-    line-height: 1.5;
+    line-height: 1.25;
     margin: 0;
-    font-size: 1.2rem;
+    font-size: 1.7rem;
     font-weight: 400;
+}
+
+.altstar-choose-container-heading {
+    color: #000000;
+    text-align: left;
+    /* white-space: nowrap; */
+    word-wrap: break-word;
+    line-height: 1.25;
+    margin: 0;
+    font-size: 1.7rem;
+    font-weight: 400;
+    margin: 30px 0;
 }
 
 .alstar-container-subheading {
     color: #000000;
     text-align: left;
     word-wrap: break-word;
-    line-height: 1.2;
+    line-height: 1.4;
     margin: 0;
-    font-size: 1.1rem;
-    font-weight: 300;
+    font-size: 1.2rem;
+    font-weight: 200;
     width: 80%;
 }
 
 .sqsrte-large {
     color: #000000;
-    text-align: left;
-    white-space: nowrap;
+    text-align: center;
+    /* white-space: nowrap; */
     word-wrap: break-word;
     line-height: 1.5;
     margin: 1rem 0;
-    font-size: 1.2rem;
-    font-weight: 300;
+    font-size: 1.7rem;
+    font-weight: 200;
 }
 
 .choose-altstar-txt {
     color: #000000;
-    text-align: left;
+    text-align: center;
     white-space: nowrap;
     word-wrap: break-word;
     line-height: 1.5;
     margin: 0;
-    font-size: 1.3rem;
+    font-size: 1.1rem;
     font-weight: 400;
+    letter-spacing: 4px;
 }
 
 .sqs-block-image {
@@ -328,7 +388,7 @@
 .home-section-background img {
     object-fit: cover;
     width: 100%;
-    height: 650px;
+    height: 400px;
     display: block;
     object-position: 13.986013986013987% 34.73684210526316%;
     opacity: 0.8;
@@ -387,41 +447,49 @@
 }
 
 .home-learn-btn {
-    line-height: normal;
-    padding: 10px 12px;
+    margin-left: 20px;
+    line-height: 60px;
+    padding: 0px 20px;
     font-style: normal;
     font-weight: 400;
     letter-spacing: .02em;
     text-transform: uppercase;
-    font-size: 1rem;
-    border: 1px solid #b1da2b;
+    font-size: 20px;
+    border: 1px solid #d7df23;
     display: inline-block;
     text-align: center;
     box-sizing: border-box;
     position: relative;
-    border-radius: 20px;
-    color: #0e0e43;
-    background-color: #b1da2b;
-    margin-left: 20px;
+    border-radius: 30px;
+    color: #000000;
+    background-color: #d7df23;
+    text-decoration: none;
+    height: 60px;
 }
 
 .home-about-btn {
-    line-height: normal;
-    padding: 10px 12px;
+    line-height: 60px;
+    padding: 0px 20px;
     font-style: normal;
     font-weight: 400;
     letter-spacing: .02em;
     text-transform: uppercase;
-    font-size: 1rem;
-    border: 1px solid #b1da2b;
+    font-size: 20px;
+    border: 1px solid #d7df23;
     display: inline-block;
     text-align: center;
     box-sizing: border-box;
     position: relative;
-    border-radius: 20px;
-    color: #0e0e99;
-    background-color: #b1da2b;
+    border-radius: 30px;
+    color: #000000;
+    background-color: #d7df23;
+    text-decoration: none;
+    height: 60px;
 }
+
+/* .home-wrapper-about-root {
+    padding-top: 3vmax;
+} */
 
 .altstar-diff-root {
     display: flex;
@@ -432,7 +500,8 @@
 .altstar-diff-container {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 30px;
+    column-gap: 50px;
+    row-gap: 120px;
 }
 
 .altstar-platform-container {
@@ -463,6 +532,7 @@
     width: 60px;
     height: 60px;
     object-fit: contain;
+    margin-bottom: 10px;
 }
 
 .recommendations-content-root {
@@ -532,6 +602,20 @@
     padding: 20px 0 0;
 }
 
+.sqs-commitment-rating-root {
+    background: #e4e4e4;
+    border-radius: 30px;
+    padding: 10px 30px;
+}
+
+.commitment-wrapper-subroot {
+    margin-left: 30px;
+}
+
+.commitment-wrapper-subroot-text {
+    margin-left: 30px;
+}
+
 .recommendations-property-subhead {
     font-size: 16px;
     font-style: normal;
@@ -567,14 +651,14 @@
     letter-spacing: .02em;
     text-transform: uppercase;
     font-size: 14px;
-    border: 1px solid #b1da2b;
+    border: 1px solid #d7df23;
     display: inline-block;
     text-align: center;
     box-sizing: border-box;
     position: relative;
     border-radius: 20px;
     color: #0e0e99;
-    background-color: #b1da2b;
+    background-color: #d7df23;
     width: fit-content;
     line-height: normal;
     font-weight: 500;

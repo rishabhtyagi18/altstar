@@ -28,7 +28,7 @@ const Header = (props) => {
                     <div className="header-display-desktop">
                         <div className="header-display-desktop-subroot">
                             <div className="header-element">
-                                <a href="/about" aria-current={window.location.pathname === "/" ? "page" : undefined}>
+                                <a href="/about">
                                     <div className="header-element-item-active">About Us</div>
                                 </a>
                             </div>

@@ -21,14 +21,14 @@ return (
                 </div>
 
             <div className="home-content-wrapper">
-                <div className="sqs-layout sqs-art-desk-gallery">
+                <div className="sqs-layout-welcome sqs-art-desk-gallery">
                     <h2>Welcome to Altstar</h2>
-                    <p className="sqsrte-large">We are on a mission to curate and offer the most attractive real estate <br></br>  investment opportunities traditionally accessible only to institutional <br></br> investors to retail investors at a click enabling them to build a diversified <br></br> real estate portfolio thereby enabling them to building a brighter financial future.</p>
+                    <p className="sqsrte-large">We are on a mission to curate and offer the most attractive real estate investment opportunities traditionally accessible only to institutional investors to retail investors at a click enabling them to build a diversified real estate portfolio thereby enabling them to building a brighter financial future.</p>
                     {/* <p className="sqsrte-large">Altstar stands as a beacon of innovation, making institutional-quality <br></br> real estate investments accessible to everyone.</p> */}
                 </div>
             </div>
             
-            <div className="home-aboutus-wrapper">
+            <div className="home-aboutus-wrapper home-wrapper-about-root">
                 <div className="sqs-layout sqs-art-desk-gallery">
                     <button className="home-about-btn">About us</button>
                 </div>
@@ -44,24 +44,23 @@ return (
                             <div className="altstar-diff-subcontainer">
                                 <img src="https://gomechprod.blob.core.windows.net/websiteasset/New%20Website/components/carEnquiry/Best-Prices.svg" alt="img" className="choose-altstar-img" />
                                 <div className="altstar-container-heading">Build a Diversified Real Estate Portfolio</div>
+                                <br></br>
                                 <div className="alstar-container-subheading">Our fractional ownership model enables investors to own a share of institutional quality real estate with lower minimum investments and build a diversified real estate portfolio not having to worry about managing the property.</div>
                             </div>
 
                             <div className="altstar-diff-subcontainer">
                                 <img src="https://gomechprod.blob.core.windows.net/websiteasset/New%20Website/components/carEnquiry/Best-Prices.svg" alt="img" className="choose-altstar-img" />
                                 <div className="altstar-container-heading">Proactive Asset Management</div>
+                                <br></br>
                                 <div className="alstar-container-subheading">Our team has end to end capabilities as developer, owner and operator of different real estate asset classes and have worked across several economic cycles. We utilize proprietary technology and systems that analyze market and property level data to make better, faster investment and asset management decisions.</div>
                             </div>
 
                             <div className="altstar-diff-subcontainer">
                                 <img src="https://gomechprod.blob.core.windows.net/websiteasset/New%20Website/components/carEnquiry/Best-Prices.svg" alt="img" className="choose-altstar-img" />
-                                <div className="altstar-container-heading">Experienced team with proven track record</div>
+                                <div className="altstar-container-heading">Experienced team with proven track</div>
+                                <br></br>
                                 <div className="alstar-container-subheading">
-                                    <ul className="altstar-rooyt-list-items">
-                                        <li>With over 40 years of combined experience, our team brings a wealth of knowledge and a track record of success in the real estate investing.</li>
-                                        <li>Over USD 3 BN of Assets managed by the leadership team across multiple asset classes and cities.</li>
-                                        <li>Led by Industry veterans – Our leadership team hails from top tier real estate firms such as Apollo, JP Morgan, Xander and VR.</li>
-                                    </ul>
+                                With over 40 years of combined experience, our team brings a wealth of knowledge and a track record of success in the real estate investing. Over USD 3 BN of Assets managed by the leadership team across multiple asset classes and cities. Led by Industry veterans – Our leadership team hails from top tier real estate firms such as Apollo, JP Morgan, Xander and VR.
                                 </div>
                             </div>
                         </div>
@@ -70,23 +69,23 @@ return (
                             <div className="altstar-diff-subcontainer">
                                 <img src="https://gomechprod.blob.core.windows.net/websiteasset/New%20Website/components/carEnquiry/Best-Prices.svg" alt="img" className="choose-altstar-img" />
                                 <div className="altstar-container-heading">Secondary market. Potential liquidity</div>
+                                <br></br>
                                 <div className="alstar-container-subheading">altstar’s secondary market matches buyers and sellers of private real estate. We offer the potential for liquidity every quarter, providing flexibility to our investors.</div>
                             </div>
 
                             <div className="altstar-diff-subcontainer">
                                 <img src="https://gomechprod.blob.core.windows.net/websiteasset/New%20Website/components/carEnquiry/Best-Prices.svg" alt="img" className="choose-altstar-img" />
                                 <div className="altstar-container-heading">Stringent selection criteria before listing</div>
+                                <br></br>
                                 <div className="alstar-container-subheading">
-                                    <ul className="altstar-rooyt-list-items">
-                                        <li>Each investment is subject to a rigorous vetting process and due diligence, ensuring only the highest quality opportunities are selected</li>
-                                        <li>Extensive networks build over the last decade help is sourcing the most attractive investments</li>
-                                    </ul>
+                                Each investment is subject to a rigorous vetting process and due diligence, ensuring only the highest quality opportunities are selected Extensive networks build over the last decade help is sourcing the most attractive investments
                                 </div>
                             </div>
 
                             <div className="altstar-diff-subcontainer">
                                 <img src="https://gomechprod.blob.core.windows.net/websiteasset/New%20Website/components/carEnquiry/Best-Prices.svg" alt="img" className="choose-altstar-img" />
                                 <div className="altstar-container-heading">Robust and secure platform</div>
+                                <br></br>
                                 <div className="alstar-container-subheading">State of the art technology to ensure the highest level of security for your investments, safeguarding both your financial and personal data.</div>
                             </div>
                         </div>
@@ -95,12 +94,12 @@ return (
             </div>
 
             <div className="home-content-choose-wrapper">
-                <div className="sqs-layout sqs-commitment-roots">
+                <div className="sqs-layout sqs-commitment-roots sqs-commitment-rating-root">
                     {/* <h2>Your Trust, Our Commitment</h2> */}
                     <div className="altstar-diff-container">
                         <div>
-                            <div className="commitment-wrapper-heading">100+</div>
-                            <div className="commitment-wrap-txt">Investors</div>
+                            <div className="commitment-wrapper-heading commitment-wrapper-subroot">100+</div>
+                            <div className="commitment-wrap-txt commitment-wrapper-subroot-text">Investors</div>
                         </div>
 
                         <div>
@@ -116,7 +115,7 @@ return (
                 </div>
             </div>
             
-            <div className="home-aboutus-wrapper">
+            <div className="home-aboutus-wrapper-learn">
                 <div className="sqs-layout sqs-art-desk-gallery">
                     <button className="home-about-btn">Learn More</button>
                 </div>
@@ -126,20 +125,20 @@ return (
                 <div className="sqs-layout sqs-commitment-roots">
                     <p className="choose-altstar-txt">OUR PLATFORM</p>
                     {/* <h2>Discover Altstar's Tech Edge</h2> */}
-                    <div>Explore key features that drive Altstar's innovation:</div>
+                    <div className="altstar-choose-container-heading">Explore key features that drive Altstar's innovation</div>
                     <ul className="altstar-platform-container">
                         <li className="platform-list">Intuitive Interface</li>
                         <li className="platform-list">Secure Transactions</li>
                         <li className="platform-list">Personalised Insights</li>
                     </ul>
 
-                    <div>
+                    <div className="platform-graph-container">
                         <img src="../assets/graph.png" alt="graph" className="platform-graph-img" />
                     </div>
                 </div>
             </div>
 
-            <div className="home-aboutus-wrapper">
+            <div className="home-aboutus-wrapper-process">
                 <div className="sqs-layout sqs-art-desk-gallery">
                     <button className="home-about-btn">See Our Process</button>
                 </div>
