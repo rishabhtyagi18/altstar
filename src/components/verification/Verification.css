@@ -56,7 +56,7 @@
     outline: none;
     border: none;
     max-width: 16.5rem;
-    margin-left: 0.625rem;
+    /* margin-left: 0.625rem; */
     min-width: 16.5rem;
     font-size: 14px;
 }
@@ -129,6 +129,15 @@
     font-style: normal;
     font-weight: 400;
     line-height: 1.5;
+}
+
+.info-note-txt {
+    color: #000000;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1.5;
+    text-align: center;
 }
 
 .otpInput{
@@ -227,7 +236,19 @@
     background: #FFF;
 }
 
+.progress-bar {
+    margin-top: 170px;
+}
+
+.desk-section-display {
+    display: none;
+}
+
 @media (min-width: 1024px) {
+    .desk-section-display {
+        display: block;
+    }
+
     .signup-footer-main-root {
         /* position: fixed; */
         width: 100%;

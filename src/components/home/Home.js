@@ -8,17 +8,108 @@ const Home = (props) => {
 
     const navigate = useNavigate();
 
+    const diffArr = [
+        {
+            icon: "https://gomechprod.blob.core.windows.net/websiteasset/New%20Website/components/carEnquiry/Best-Prices.svg",
+            title: "Build a Diversified Real Estate Portfolio",
+            subTitle: "Our fractional ownership model enables investors to own a share of institutional quality real estate with lower minimum investments and build a diversified real estate portfolio not having to worry about managing the property."
+        },
+        {
+            icon: "https://gomechprod.blob.core.windows.net/websiteasset/New%20Website/components/carEnquiry/Best-Prices.svg",
+            title: "Proactive Asset Management",
+            subTitle: "Our team has end to end capabilities as developer, owner and operator of different real estate asset classes and have worked across several economic cycles. We utilize proprietary technology and systems that analyze market and property level data to make better, faster investment and asset management decisions."
+        },
+        {
+            icon: "https://gomechprod.blob.core.windows.net/websiteasset/New%20Website/components/carEnquiry/Best-Prices.svg",
+            title: "Experienced team with proven track",
+            subTitle: "With over 40 years of combined experience, our team brings a wealth of knowledge and a track record of success in the real estate investing. Over USD 3 BN of Assets managed by the leadership team across multiple asset classes and cities. Led by Industry veterans – Our leadership team hails from top tier real estate firms such as Apollo, JP Morgan, Xander and VR."
+        },
+        {
+            icon: "https://gomechprod.blob.core.windows.net/websiteasset/New%20Website/components/carEnquiry/Best-Prices.svg",
+            title: "Secondary market. Potential liquidity",
+            subTitle: "Altstar’s secondary market matches buyers and sellers of private real estate. We offer the potential for liquidity every quarter, providing flexibility to our investors."
+        },
+        {
+            icon: "https://gomechprod.blob.core.windows.net/websiteasset/New%20Website/components/carEnquiry/Best-Prices.svg",
+            title: "Stringent selection criteria before listing",
+            subTitle: "Each investment is subject to a rigorous vetting process and due diligence, ensuring only the highest quality opportunities are selected Extensive networks build over the last decade help is sourcing the most attractive investments"
+        },
+        {
+            icon: "https://gomechprod.blob.core.windows.net/websiteasset/New%20Website/components/carEnquiry/Best-Prices.svg",
+            title: "Robust and secure platform",
+            subTitle: "State of the art technology to ensure the highest level of security for your investments, safeguarding both your financial and personal data."
+        }
+    ]
+
+    const recommendationsArr = [
+        {
+            name: "PROPERTY ONE",
+            img: "../assets/mask_group.png",
+            heading: "Introducing Altstar Direct Access Fund II",
+            subHeading: "Capture the value of market dislocations in our newest value-add funds.",
+            strategy: "Investment Strategy",
+            valueStrategy: "Value add",
+            fundSize: "Target Fund Size",
+            fundValue: "$400 mm",
+            propertyType: "Target Property Types",
+            propertyTypeValue: "Various property types",
+            minInvestment: "Investment minimum",
+            minInvestmentValue: "50K",
+            btnText: "Learn More"
+        },
+        {
+            name: "PROPERTY TWO",
+            img: "../assets/mask_group.png",
+            heading: "Introducing Altstar Direct Access Fund II",
+            subHeading: "Capture the value of market dislocations in our newest value-add funds.",
+            strategy: "Investment Strategy",
+            valueStrategy: "Value add",
+            fundSize: "Target Fund Size",
+            fundValue: "$400 mm",
+            propertyType: "Target Property Types",
+            propertyTypeValue: "Various property types",
+            minInvestment: "Investment minimum",
+            minInvestmentValue: "50K",
+            btnText: "Learn More"
+        }
+    ]
+
+    const resourcesArr = [
+        {
+            img: "../assets/mask_group.png",
+            heading: "Lorem ipsum",
+            subHeading: "Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam"
+        },
+        {
+            img: "../assets/mask_group.png",
+            heading: "Lorem ipsum",
+            subHeading: "Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam"
+        },
+        {
+            img: "../assets/mask_group.png",
+            heading: "Lorem ipsum",
+            subHeading: "Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam"
+        }
+    ]
+
 return (
     <>  
         <div className="home-root">
             <div className="home-section-background home-desk-root">
-                    <img src="../assets/Altstar-Banner.png" alt="banner" />
-                    <div className="home-story-content home-text-first">
-                        {/* <p className="home-investment-text">Empowering Investment Journeys</p> */}
-                        <p className="home-story-text">Smart investing in Real estate</p>
-                        <button className="home-learn-btn">View Opportunities</button>
-                    </div>
+                <img src="../assets/Altstar-Banner.png" alt="banner" />
+                <div className="home-story-content home-text-first">
+                    <p className="home-story-text">Smart investing in Real estate</p>
+                    <button className="home-learn-btn">View Opportunities</button>
                 </div>
+            </div>
+
+            <div className="home-section-background home-mob-root">
+                <img src="../assets/Altstar-Banner.png" alt="banner" />
+                <div className="home-story-content home-text-first">
+                    <p className="home-story-text">Smart investing in Real estate</p>
+                    <button className="home-learn-btn">View Opportunities</button>
+                </div>
+            </div>
 
             <div className="home-content-wrapper">
                 <div className="sqs-layout-welcome sqs-art-desk-gallery">
@@ -39,56 +130,30 @@ return (
                     <p className="choose-altstar-txt">WHY CHOOSE ALTSTAR?</p>
                     <h2>The Altstar difference</h2>
                     
-                    <div className="altstar-diff-root">
+                    <div className="altstar-diff-root home-desk-root">
                         <div className="altstar-diff-container">
-                            <div className="altstar-diff-subcontainer">
-                                <img src="https://gomechprod.blob.core.windows.net/websiteasset/New%20Website/components/carEnquiry/Best-Prices.svg" alt="img" className="choose-altstar-img" />
-                                <div className="altstar-container-heading">Build a Diversified Real Estate Portfolio</div>
-                                <br></br>
-                                <div className="alstar-container-subheading">Our fractional ownership model enables investors to own a share of institutional quality real estate with lower minimum investments and build a diversified real estate portfolio not having to worry about managing the property.</div>
-                            </div>
-
-                            <div className="altstar-diff-subcontainer">
-                                <img src="https://gomechprod.blob.core.windows.net/websiteasset/New%20Website/components/carEnquiry/Best-Prices.svg" alt="img" className="choose-altstar-img" />
-                                <div className="altstar-container-heading">Proactive Asset Management</div>
-                                <br></br>
-                                <div className="alstar-container-subheading">Our team has end to end capabilities as developer, owner and operator of different real estate asset classes and have worked across several economic cycles. We utilize proprietary technology and systems that analyze market and property level data to make better, faster investment and asset management decisions.</div>
-                            </div>
-
-                            <div className="altstar-diff-subcontainer">
-                                <img src="https://gomechprod.blob.core.windows.net/websiteasset/New%20Website/components/carEnquiry/Best-Prices.svg" alt="img" className="choose-altstar-img" />
-                                <div className="altstar-container-heading">Experienced team with proven track</div>
-                                <br></br>
-                                <div className="alstar-container-subheading">
-                                With over 40 years of combined experience, our team brings a wealth of knowledge and a track record of success in the real estate investing. Over USD 3 BN of Assets managed by the leadership team across multiple asset classes and cities. Led by Industry veterans – Our leadership team hails from top tier real estate firms such as Apollo, JP Morgan, Xander and VR.
+                            {diffArr.map((ele, index) =>  
+                                <div className="altstar-diff-subcontainer" key={index}>
+                                    <img src={ele.icon} alt="img" className="choose-altstar-img" />
+                                    <div className="altstar-container-heading">{ele.title}</div>
+                                    <br></br>
+                                    <div className="alstar-container-subheading">{ele.subTitle}</div>
                                 </div>
-                            </div>
+                            )}
                         </div>
+                    </div>
 
-                        <div className="altstar-diff-container">
-                            <div className="altstar-diff-subcontainer">
-                                <img src="https://gomechprod.blob.core.windows.net/websiteasset/New%20Website/components/carEnquiry/Best-Prices.svg" alt="img" className="choose-altstar-img" />
-                                <div className="altstar-container-heading">Secondary market. Potential liquidity</div>
-                                <br></br>
-                                <div className="alstar-container-subheading">altstar’s secondary market matches buyers and sellers of private real estate. We offer the potential for liquidity every quarter, providing flexibility to our investors.</div>
-                            </div>
-
-                            <div className="altstar-diff-subcontainer">
-                                <img src="https://gomechprod.blob.core.windows.net/websiteasset/New%20Website/components/carEnquiry/Best-Prices.svg" alt="img" className="choose-altstar-img" />
-                                <div className="altstar-container-heading">Stringent selection criteria before listing</div>
-                                <br></br>
-                                <div className="alstar-container-subheading">
-                                Each investment is subject to a rigorous vetting process and due diligence, ensuring only the highest quality opportunities are selected Extensive networks build over the last decade help is sourcing the most attractive investments
+                    <div className="altstar-diff-root home-mob-root">
+                        <Carousel showArrows={false} autoPlay={true} infiniteLoop={true} interval={3000} showThumbs={false} showIndicators={true} showStatus={false} emulateTouch={false} swipeable={false}>
+                            {diffArr.map((ele, index) => (
+                                <div className="altstar-diff-subcontainer" key={index}>
+                                    <img src={ele.icon} alt="img" className="choose-altstar-img" />
+                                    <div className="altstar-container-heading">{ele.title}</div>
+                                    <br></br>
+                                    <div className="alstar-container-subheading">{ele.subTitle}</div>
                                 </div>
-                            </div>
-
-                            <div className="altstar-diff-subcontainer">
-                                <img src="https://gomechprod.blob.core.windows.net/websiteasset/New%20Website/components/carEnquiry/Best-Prices.svg" alt="img" className="choose-altstar-img" />
-                                <div className="altstar-container-heading">Robust and secure platform</div>
-                                <br></br>
-                                <div className="alstar-container-subheading">State of the art technology to ensure the highest level of security for your investments, safeguarding both your financial and personal data.</div>
-                            </div>
-                        </div>
+                            ))}
+                        </Carousel>
                     </div>
                 </div>
             </div>
@@ -149,79 +214,92 @@ return (
                     <p className="choose-altstar-txt">OUR RECOMMENDATIONS</p>
                     <h2>Altstar's Live Deals</h2>
                     <div>Private real estate delivers consistent, comparable returns to equities <br></br> and REITs over the past two decades, with lower volatility</div>
-                    <div className="recommendations-content-root">
-                        {/* <div className="arrow-recommendations-root-left"><img src="../assets/vector.png" alt="arrow" className="arrow-recommendations-left" /></div> */}
-                        <div className="recommendations-content-internal-root">
-                            <div className="recommendations-property-txt">PROPERTY ONE</div>
-                            <img src="../assets/mask_group.png" alt="img" className="recommendations-img" />
 
-                            <div className="recommendations-property-container">
-                                <div className="recommendations-property-heading">Introducing Altstar Direct Access Fund II</div>
-                                <div className="recommendations-property-subhead">Capture the value of market dislocations in our newest value-add funds.</div>
+                    <div className="home-recommendations-desk-root">
+                        <div className="recommendations-content-root">
+                            {/* <div className="arrow-recommendations-root-left"><img src="../assets/vector.png" alt="arrow" className="arrow-recommendations-left" /></div> */}
+                            {recommendationsArr.map((ele, index) => 
+                                <div className="recommendations-content-internal-root" key={index}>
+                                    <div className="recommendations-property-txt">{ele.name}</div>
+                                    <img src={ele.img} alt="img" className="recommendations-img" />
 
-                                <div className="property-subcontainer-root">
-                                    <div className="recommendations-strategy-container">
-                                        <div className="recommendations-strategy-text">Investment Strategy</div>
-                                        <div className="recommendations-strategy-subtxt">Value add</div>
+                                    <div className="recommendations-property-container">
+                                        <div className="recommendations-property-heading">{ele.heading}</div>
+                                        <div className="recommendations-property-subhead">{ele.subHeading}</div>
+
+                                        <div className="property-subcontainer-root">
+                                            <div className="recommendations-strategy-container">
+                                                <div className="recommendations-strategy-text">{ele.strategy}</div>
+                                                <div className="recommendations-strategy-subtxt">{ele.valueStrategy}</div>
+                                            </div>
+
+                                            <div className="recommendations-strategy-container">
+                                                <div className="recommendations-strategy-text">{ele.fundSize}</div>
+                                                <div className="recommendations-strategy-subtxt">{ele.fundValue}</div>
+                                            </div>
+
+                                            <div className="recommendations-strategy-container">
+                                                <div className="recommendations-strategy-text">{ele.propertyType}</div>
+                                                <div className="recommendations-strategy-subtxt">{ele.propertyTypeValue}</div>
+                                            </div>
+
+                                            <div className="recommendations-strategy-container">
+                                                <div className="recommendations-strategy-text">{ele.minInvestment}</div>
+                                                <div className="recommendations-strategy-subtxt">{ele.minInvestmentValue}</div>
+                                            </div>
+                                        </div>
                                     </div>
-
-                                    <div className="recommendations-strategy-container">
-                                        <div className="recommendations-strategy-text">Target Fund Size</div>
-                                        <div className="recommendations-strategy-subtxt">$400 mm</div>
-                                    </div>
-
-                                    <div className="recommendations-strategy-container">
-                                        <div className="recommendations-strategy-text">Target Property Types</div>
-                                        <div className="recommendations-strategy-subtxt">Various property types</div>
-                                    </div>
-
-                                    <div className="recommendations-strategy-container">
-                                        <div className="recommendations-strategy-text">Investment minimum</div>
-                                        <div className="recommendations-strategy-subtxt">50K</div>
-                                    </div>
+                                    
+                                    <button className="recommendations-learn-btn">{ele.btnText}</button>
                                 </div>
-                            </div>
-                            
-                            <button className="recommendations-learn-btn">Learn More</button>
+                            )}
+
+                            {/* <div className="arrow-recommendations-root">
+                                <img src="../assets/vector.png" alt="arrow" className="arrow-recommendations-right" />
+                            </div> */}
                         </div>
+                    </div>
 
-                        <div className="recommendations-content-internal-root">
-                            <div className="recommendations-property-txt">PROPERTY TWO</div>
-                            <img src="../assets/mask_group.png" alt="img" className="recommendations-img" />
+                    <div className="recommendations-content-root home-mob-root">
+                        <Carousel showArrows={false} autoPlay={true} infiniteLoop={true} interval={4000} showThumbs={false} showIndicators={true} showStatus={false} emulateTouch={false} swipeable={false}>
+                            {recommendationsArr.map((ele, index) => 
+                                <div className="recommendations-content-internal-root" key={index}>
+                                    <div className="recommendations-property-txt">{ele.name}</div>
+                                    <img src={ele.img} alt="img" 
+                                        // className="recommendations-img" 
+                                    />
 
-                            <div className="recommendations-property-container">
-                                <div className="recommendations-property-heading">Introducing Altstar Direct Access Fund II</div>
-                                <div className="recommendations-property-subhead">Capture the value of market dislocations in our newest value-add funds.</div>
-                                
-                                <div className="property-subcontainer-root">
-                                    <div className="recommendations-strategy-container">
-                                        <div className="recommendations-strategy-text">Investment Strategy</div>
-                                        <div className="recommendations-strategy-subtxt">Value add</div>
+                                    <div className="recommendations-property-container">
+                                        <div className="recommendations-property-heading">{ele.heading}</div>
+                                        <div className="recommendations-property-subhead">{ele.subHeading}</div>
+
+                                        <div className="property-subcontainer-root">
+                                            <div className="recommendations-strategy-container">
+                                                <div className="recommendations-strategy-text">{ele.strategy}</div>
+                                                <div className="recommendations-strategy-subtxt">{ele.valueStrategy}</div>
+                                            </div>
+
+                                            <div className="recommendations-strategy-container">
+                                                <div className="recommendations-strategy-text">{ele.fundSize}</div>
+                                                <div className="recommendations-strategy-subtxt">{ele.fundValue}</div>
+                                            </div>
+
+                                            <div className="recommendations-strategy-container">
+                                                <div className="recommendations-strategy-text">{ele.propertyType}</div>
+                                                <div className="recommendations-strategy-subtxt">{ele.propertyTypeValue}</div>
+                                            </div>
+
+                                            <div className="recommendations-strategy-container">
+                                                <div className="recommendations-strategy-text">{ele.minInvestment}</div>
+                                                <div className="recommendations-strategy-subtxt">{ele.minInvestmentValue}</div>
+                                            </div>
+                                        </div>
                                     </div>
-
-                                    <div className="recommendations-strategy-container">
-                                        <div className="recommendations-strategy-text">Target Fund Size</div>
-                                        <div className="recommendations-strategy-subtxt">$400 mm</div>
-                                    </div>
-
-                                    <div className="recommendations-strategy-container">
-                                        <div className="recommendations-strategy-text">Target Property Types</div>
-                                        <div className="recommendations-strategy-subtxt">Various property types</div>
-                                    </div>
-
-                                    <div className="recommendations-strategy-container">
-                                        <div className="recommendations-strategy-text">Investment minimum</div>
-                                        <div className="recommendations-strategy-subtxt">50K</div>
-                                    </div>
+                                    
+                                    <button className="recommendations-learn-btn">{ele.btnText}</button>
                                 </div>
-                            </div>
-                            
-                            <button className="recommendations-learn-btn">Learn More</button>
-                        </div>
-
-                        {/* <div className="arrow-recommendations-root">
-                            <img src="../assets/vector.png" alt="arrow" className="arrow-recommendations-right" />
-                        </div> */}
+                            )}
+                        </Carousel>
                     </div>
                 </div>
             </div>
@@ -231,27 +309,30 @@ return (
                     <p className="choose-altstar-txt">ALTSTAR RESOURCES</p>
                     <h2>Explore Our Latest Blogs and Insights</h2>
                     
-                    <div className="altstar-diff-root">
+                    <div className="altstar-diff-root home-recommendations-desk-root">
                         <div className="altstar-diff-container">
-                            <div className="altstar-diff-subcontainer">
-                                <img src="../assets/mask_group.png" alt="img" className="resources-altstar-img" />
-                                <div className="altstar-container-heading">Lorem ipsum</div>
-                                <div className="alstar-container-subheading">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam,</div>
-                            </div>
-
-                            <div className="altstar-diff-subcontainer">
-                                <img src="../assets/mask_group.png" alt="img" className="resources-altstar-img" />
-                                <div className="altstar-container-heading">Lorem ipsum</div>
-                                <div className="alstar-container-subheading">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam,</div>
-                            </div>
-
-                            <div className="altstar-diff-subcontainer">
-                                <img src="../assets/mask_group.png" alt="img" className="resources-altstar-img" />
-                                <div className="altstar-container-heading">Lorem ipsum</div>
-                                <div className="alstar-container-subheading">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam,</div>
-                            </div>
+                            {resourcesArr.map((ele, index) => 
+                                <div className="altstar-diff-subcontainer">
+                                    <img src={ele.img} alt="img" className="resources-altstar-img" />
+                                    <div className="altstar-container-heading">{ele.heading}</div>
+                                    <div className="alstar-container-subheading">{ele.subHeading}</div>
+                                </div>
+                            )}
                         </div>
+                    </div>
 
+                    <div className="altstar-diff-root home-mob-root">
+                        <div className="altstar-diff-container">
+                            <Carousel showArrows={false} autoPlay={false} infiniteLoop={true} interval={3000} showThumbs={false} showIndicators={true} showStatus={false} emulateTouch={false} swipeable={false}>
+                                {resourcesArr.map((ele, index) => 
+                                    <div className="altstar-diff-subcontainer">
+                                        <img src={ele.img} alt="img" className="resources-altstar-img" />
+                                        <div className="altstar-container-heading">{ele.heading}</div>
+                                        <div className="alstar-container-subheading">{ele.subHeading}</div>
+                                    </div>
+                                )}
+                            </Carousel>
+                        </div>
                     </div>
                 </div>
             </div>

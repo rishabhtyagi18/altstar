@@ -1,7 +1,75 @@
 import React, { useEffect, useState } from "react";
 import './DetailPage.css';
+import { useNavigate, useLocation } from 'react-router-dom';
+import ReactApexChart from 'react-apexcharts';
 
 const DetailPage = (props) => {
+    const navigate = useNavigate();
+    const [count, setCount] = useState(0);
+
+    const IncrementUnit = () => {
+        if (count < 10) {
+            setCount(count + 1);
+        }
+    }
+
+    const DecrementUnit =  () => {
+        if (count > 0) {
+            setCount(count - 1);
+        }
+    }
+
+    const borrowerJson = {
+        graphType: "donut",
+        title: "Delinquent Loans",
+        series: [44, 55, 13, 33, 15],
+        labels: ["Team A", "Team B", "Team C", "Team D", "Team E"],
+        color: ["#9795ca", "#5c5a7f", "#5c5a7f", "#625f98", "#bbbadb"]
+      }
+
+    const donutChart = {
+        // series: [44, 55, 13, 33, 23],
+        options: {
+          chart: {
+            width: 380,
+            type: 'donut',
+          },
+          dataLabels: {
+            enabled: false
+          },
+          labels: borrowerJson.labels,
+          responsive: [{
+            breakpoint: 480,
+            options: {
+              chart: {
+                width: 300,
+              },
+              legend: {
+                show: true
+              },
+            }
+          }],
+          plotOptions: {
+            pie: {
+              startAngle: 0,
+              endAngle: 360,
+              expandOnClick: true,
+              offsetX: 0,
+              offsetY: 0,
+              customScale: 1,
+              dataLabels: {
+                  offset: 0,
+                  minAngleToShowLabel: 10
+              }, 
+              donut: {
+                size: '90%',
+            }}},
+          legend: {
+            show: true
+          },
+          colors: borrowerJson.color,
+        }
+    };
 
 return (
     <>  
@@ -10,8 +78,7 @@ return (
             <div className="detailPage-section-background aboutUs-desk-root">
                 <img src="../assets/Altstar-Banner.png" alt="banner" />
                 <div className="detailPage-story-content detailPage-text-first">
-                    <p className="detailPage-investment-text">Empowering Investment Journeys</p>
-                    <p className="detailPage-story-text">Every Size, Every Goal.</p>
+                    <p className="detailPage-story-text">Smart investing in Real estate</p>
                     <button className="detailPage-learn-btn">LEARN MORE</button>
                 </div>
             </div>
@@ -44,7 +111,7 @@ return (
                 <div className="appreciation-main-root">
                     <div className="appreciation-details-container">
                         <img src="../assets/sean-pollock.png" alt="banner" className="appreciation-details-img" />
-                        <div className="appreciation-details-subcontainer">
+                        <div className="appreciation-details-subcontainer desk-section-img-display">
                             <img src="../assets/sean-pollockunsplash.png" alt="banner" className="appreciation-details-small-img" />
                             <img src="../assets/sean-pollockunsplash.png" alt="banner" className="appreciation-details-small-img" />
                             <img src="../assets/sean-pollockunsplash.png" alt="banner" className="appreciation-details-small-img" />
@@ -90,14 +157,14 @@ return (
                                 <div className="appreciation-unit-purchase-root">
                                     <div className="appreciation-unit-purchase-text">Unit Purchased</div>
                                     <div className="appreciation-unit-qunatity-root">
-                                        <div className="appreciation-unit-qunatity-text">-</div>
-                                        <div className="appreciation-unit-qunatity-text">1</div>
-                                        <div className="appreciation-unit-qunatity-text">+</div>
+                                        <div className="appreciation-unit-qunatity-text" onClick={() => DecrementUnit()}>-</div>
+                                        <div className="appreciation-unit-qunatity-text">{count}</div>
+                                        <div className="appreciation-unit-qunatity-text" onClick={() => IncrementUnit()}>+</div>
                                     </div>
                                 </div>
                             </div>
 
-                            <button className="appreciation-investment-now-btn">Invest Now</button>
+                            <button onClick={() => navigate('/verification')} className="appreciation-investment-now-btn">Invest Now</button>
                         </div>
                     </div>
                 </div>
@@ -170,6 +237,21 @@ return (
                             <td></td>
                         </tr>
                     </table>
+                </div>
+            </div>
+
+            <div className="detailPage-content-wrapper">
+                <h2 className="chart-heading">Prestige Tech Platina</h2>
+                <div className="donut-chart-root">
+                    <ReactApexChart options={donutChart.options} series={borrowerJson.series} type={borrowerJson.graphType} height={300} />
+                </div>
+            </div>
+
+            <div className="detailPage-content-wrapper">
+                <h2 className="chart-heading">Location Highlights</h2>
+                <div>
+                    <p>Prestige Tech Platina is a LEED Platinum building on the main Outer Ring Road, the largest office corridor in Bangalore.</p>
+                    <img src="../assets/location_ss.png" className="graph-detail-img" alt="graph" />
                 </div>
             </div>
 

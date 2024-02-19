@@ -1,6 +1,6 @@
-.detailPage-us-root {
+.detailPage-root {
     background-color: #ffffff;
-    margin-top: 96px;
+    margin-top: 75px;
 }
 
 .detailPage-section-background {
@@ -17,9 +17,9 @@
 .detailPage-section-background img {
     object-fit: cover;
     width: 100%;
-    height: 650px;
+    height: 400px;
     display: block;
-    object-position: 13.986013986013987% 34.73684210526316%;
+    object-position: unset;
     opacity: 0.8;
 }
 
@@ -28,20 +28,20 @@
     left: 0;
     -webkit-font-smoothing: antialiased;
     box-sizing: content-box;
-    margin-left: 4rem;
+    margin-left: 1rem;
     /* background-color: rgba(8,8,8,.5) !important; */
     border-radius: 4px;
     top: 20%;
 }
 
-.detailPage-text-first {
+/* .detailPage-text-first {
     animation-name: slideRight;
     -webkit-animation-name: slideRight;
     animation-duration: 1.5s;
     -webkit-animation-duration: 1.5s;
     animation-timing-function: ease-in-out;
     -webkit-animation-timing-function: ease-in-out;
-}
+} */
 
 @keyframes slideRight {
     0% {
@@ -64,42 +64,44 @@
 }
 
 .detailPage-story-text {
-    font-size: 2.5rem;
+    font-size: 1.75rem;
     padding: 0px 20px 0px;
     font-weight: 400;
     text-transform: uppercase;
     padding-top: 0px;
     color: #ffffff;
-    width: 55%;
+    width: 65%;
     margin-block-start: 0;
     margin-block-end: 10px;
 }
 
 .detailPage-learn-btn {
-    line-height: normal;
-    padding: 10px 12px;
+    margin-left: 20px;
+    line-height: 16px;
+    padding: 0px 15px;
     font-style: normal;
     font-weight: 400;
     letter-spacing: .02em;
     text-transform: uppercase;
-    font-size: 1rem;
+    font-size: 20px;
     border: 1px solid #d7df23;
     display: inline-block;
     text-align: center;
     box-sizing: border-box;
     position: relative;
-    border-radius: 20px;
-    color: #0e0e43;
+    border-radius: 30px;
+    color: #000000;
     background-color: #d7df23;
-    margin-left: 20px;
+    text-decoration: none;
+    height: 40px;
 }
 
 .detailPage-content-wrapper {
     padding-top: 3.3vmax;
     padding-bottom: 1.3vmax;
     justify-content: left;
-    padding-right: 12vmax;
-    padding-left: 12vmax;
+    padding-right: 4vmax;
+    padding-left: 4vmax;
     margin: 0 auto;
     /* display: flex; */
     box-sizing: content-box;
@@ -111,8 +113,8 @@
     padding-top: 3.3vmax;
     padding-bottom: 3.3vmax;
     justify-content: left;
-    padding-right: 12vmax;
-    padding-left: 12vmax;
+    padding-right: 4vmax;
+    padding-left: 4vmax;
     margin: 0 auto;
     /* display: flex; */
     box-sizing: content-box;
@@ -124,8 +126,8 @@
     padding-top: 2vmax;
     padding-bottom: 1.3vmax;
     justify-content: left;
-    padding-right: 12vmax;
-    padding-left: 12vmax;
+    padding-right: 4vmax;
+    padding-left: 4vmax;
     margin: 0 auto;
     /* display: flex; */
     box-sizing: content-box;
@@ -141,6 +143,18 @@
     box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.15);
     margin: auto;
     border-radius: 8px;
+    overflow: auto;
+    width: 100%;
+}
+
+.investment-main-root::-webkit-scrollbar-thumb {
+    background: transparent;
+    border-radius: 15px;
+}
+  
+.investment-main-root::-webkit-scrollbar {
+    width: 0;
+    height: 0;
 }
 
 .detailpage-html-section {
@@ -163,15 +177,15 @@
 
 .appreciation-details-img {
     /* width: 750px; */
-    height: 700px;
+    height: 300px;
     object-fit: fill;
     border-radius: 15px;
-    width: calc(100vw - 54vw);
+    width: calc(100vw - 14vw);
 }
 
 .appreciation-details-small-img {
-    width: 100px;
-    height: 100px;
+    width: 80px;
+    height: 80px;
     object-fit: contain;
     border-radius: 5px;
 }
@@ -184,15 +198,14 @@
 }
 
 .appreciation-main-root {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 50px;
-    align-items: center;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
 }
 
 .appreciation-details-container {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     gap: 20px;
 }
 
@@ -222,7 +235,7 @@
     font-size: calc((1.1 - 1) * calc(.012 * min(100vh, 900px)) + 1rem);
     float: none;
     width: auto;
-    word-wrap: break-word;
+    /* word-wrap: break-word; */
 }
 
 .sqs-layout h2 {
@@ -238,7 +251,7 @@
 }
 
 .appreciation-investment-root {
-    background: #0A62A5;
+    background: #348ed2;
     border-radius: 25px;
     padding: 20px 20px 30px;
 }
@@ -282,6 +295,7 @@
     font-weight: 700;
     line-height: 32px;
     margin-top: 7px;
+    text-align: center;
 }
 
 .appreciation-invest-rental-sub-text {
@@ -317,6 +331,7 @@
     font-style: normal;
     font-weight: 700;
     line-height: 1.2;
+    cursor: pointer;
 }
 
 .appreciation-unit-purchase-root {
@@ -338,6 +353,7 @@
     text-align: center;
     width: 100%;
     border: 1px solid #fff;
+    cursor: pointer;
 }
 
 .capital-appreciation-table {
@@ -349,6 +365,15 @@
 .capital-appreciation-table td, .capital-appreciation-table th {
     border: 1px solid #DFEDFF;
     padding: 20px;
+}
+
+@media (max-width: 768px) {
+    .capital-appreciation-table td:first-child, .capital-appreciation-table th:first-child {
+        text-transform: uppercase;
+        left: 0;
+        position: sticky;
+        background: #fdfdfd;
+    }
 }
 
 /* .capital-appreciation-table td:first-child, .capital-appreciation-table th :first-child {
@@ -364,6 +389,9 @@
 
 .capital-appreciation-main-root {
     display: flex;
+    width: 100%;
+    overflow-x: scroll;
+    margin-bottom: 30px;
 }
 
 .appreciation-table-strong {
@@ -374,8 +402,8 @@
     padding-top: 3.3vmax;
     padding-bottom: 1.3vmax;
     justify-content: left;
-    padding-right: 12vmax;
-    padding-left: 12vmax;
+    padding-right: 4vmax;
+    padding-left: 4vmax;
     margin: 0 auto;
     /* display: flex; */
     box-sizing: content-box;
@@ -385,7 +413,7 @@
 
 .invest-now-btn-root {
     border-radius: 10px;
-    background: #0A62A5;
+    background: #348ed2;
     box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.15);
     color: #FFF;
     font-size: 24px;
@@ -393,14 +421,14 @@
     font-weight: 700;
     line-height: 32px;
     padding: 10px 100px;
-    border: 1px solid #0A62A5;
+    border: 1px solid #348ed2;
     display: block;
     margin: auto;
 }
 
 .detailPage-attachement-list-root {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    display: flex;
+    flex-direction: column;
     row-gap: 20px;
     width: 90%;
 }
@@ -461,4 +489,115 @@
     width: 20px;
     height: 20px;
     object-fit: contain;
+}
+
+.desk-section-img-display {
+    display: none;
+}
+
+
+
+.chart-heading {
+    white-space: pre-wrap;
+    /* padding-bottom: 3px; */
+    display: block;
+    text-align: left;
+    font-size: 2rem;
+    line-height: calc(1.4em * (1 + (1 - 2)/25));
+    text-transform: capitalize;
+    font-weight: 400;
+    margin: 8px 0 8px;
+}
+
+.graph-detail-img {
+    width: -webkit-fill-available;
+    object-fit: contain;
+}
+
+@media (min-width: 1024px) {
+    .graph-detail-img {
+        width: 1000px;
+        object-fit: contain;
+    }
+
+    .donut-chart-root {
+        padding: 15px 10px;
+        min-height: 350px;
+        max-height: 400px;
+        position: relative;
+        top: 40px;
+        width: 50%;
+    }
+
+    .detailPage-root {
+        margin-top: 96px;
+    }
+
+    .detailPage-section-background img {
+        object-position: 13.986013986013987% 34.73684210526316%;
+    }
+
+    .desk-section-img-display {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .detailPage-story-content {
+        margin-left: 4rem;
+        top: 20%;
+    }
+
+    .detailPage-story-text {
+        font-size: 2.5rem;
+        width: 55%;
+    }
+
+    .detailPage-learn-btn {
+        padding: 0 20px;
+        height: 60px;
+        line-height: 60px;
+    }
+
+    .detailPage-top-content-wrapper {
+        padding-right: 12vmax;
+        padding-left: 12vmax;
+    }
+
+    .investment-main-root {
+        width: fit-content;
+    }
+
+    .appreciation-main-root {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 50px;
+        align-items: center;
+    }
+
+    .detailPage-content-wrapper {
+        padding-right: 12vmax;
+        padding-left: 12vmax;
+    }
+
+    .appreciation-details-img {
+        height: 650px;
+        width: calc(100vw - 56vw);
+    }
+
+    .invest-now-btn-wrapper {
+        padding-right: 12vmax;
+        padding-left: 12vmax;
+    }
+
+    .download-attachement-content-wrapper {
+        padding-right: 12vmax;
+        padding-left: 12vmax;
+    }
+
+    .detailPage-attachement-list-root {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        row-gap: 20px;
+        width: 90%;
+    }
 }

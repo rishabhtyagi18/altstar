@@ -9,7 +9,7 @@ const DropDownMenu = (props) => {
         <div className="item" style={{ ...props.style }}>
           {props.parentString}
         </div>
-        <div className="dropDown">
+        <div className="dropDown" style={{ ...props.dropDownStyle}}>
           <div className="triangle" />
           {props.children}
         </div>

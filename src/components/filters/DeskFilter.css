@@ -1,0 +1,57 @@
+.filter-root-container {
+    background: rgb(245, 245, 245);
+    max-width: 300px;
+    min-width: 272px;
+    border-radius: 10px;
+}
+
+.filter-checkbox-root {
+    display: flex;
+    gap: 10px;
+}
+
+.filter-inner-subcontainer {
+    padding: 30px;
+}
+
+.filter-heading {
+    font-size: 18px;
+    padding-bottom: 3px;
+    display: block;
+    text-align: left;
+    line-height: calc(1.4em * (1 + (1 - 2)/25));
+    text-transform: capitalize;
+    font-weight: 500;
+    margin: 8px 0 10px;
+}
+
+.filter-subType-txt {
+    font-size: 1rem;
+    text-align: left;
+    line-height: calc(1.4em * (1 + (1 - 2)/25));
+    text-transform: capitalize;
+    font-weight: 300;
+}
+
+.filter-inner-section-display {
+    gap: 15px;
+    display: flex;
+    flex-direction: column;
+}
+
+.filter-inner-subroot-container {
+    margin-bottom: 30px;
+}
+
+@media (min-width: 1024px) {
+    .detail-filter-list-container {
+        display: flex;
+        flex-direction: row;
+        gap: 20px;
+        padding-top: 3.3vmax;
+        padding-bottom: 1.3vmax;
+        justify-content: left;
+        padding-right: 8vmax;
+        padding-left: 8vmax;
+    }
+}

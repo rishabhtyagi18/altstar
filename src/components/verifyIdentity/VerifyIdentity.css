@@ -1,0 +1,139 @@
+.verify-mobile-txt {
+    color: #000000;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: 1.5;
+    margin-bottom: 30px;
+    margin-top: 4rem;
+}
+
+.verify-form-containerroot {
+    margin: 0;
+}
+
+.verify-form-container{
+    display: flex;
+    flex-direction: column;
+    gap : 26px;
+    width: 100%;
+    margin-top: 15%;
+}
+
+.verify-form-container input{
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 16px;
+    /* color: rgba(0, 0, 0, 0.40); */
+}
+
+.verify-form-container > label {
+    color: #474747;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 0px;
+    margin-bottom: -10px;
+    margin-left: 5px;
+}
+
+.flag-container{
+    letter-spacing: 0.15px;
+    text-align: left;
+    padding: 14px 16px;
+    outline: none;
+    border-radius: 10px;
+    border: 1px solid rgba(0, 0, 0, 0.12);
+    background: #FFF;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 16px;
+}
+.selected-flag{
+    /* background-color: rgba(0,0,0,.05); */
+    z-index: 1;
+    gap: 5px;
+    position: relative;
+    display: -webkit-box;
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    height: 100%;
+    padding: 0 6px 0 8px;
+    border-radius: 24px 0px 0px 24px;
+    justify-content: space-between;
+}
+
+.flag-name-root-container {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
+
+.verify-identity-country-root {
+    position: relative;
+    display: inline-block;
+    border-radius: 24px;
+    /* border: 1px solid rgba(0, 0, 0, 0.12); */
+}
+
+.country-list{
+    position: absolute;
+    z-index: 2;
+    list-style: none;
+    text-align: left;
+    padding: 0;
+    margin: 0 0 0 -1px;
+    box-shadow: 1px 1px 4px rgba(0,0,0,.2);
+    background-color: #fff;
+    border: 1px solid #ccc;
+    white-space: nowrap;
+    max-height: 200px;
+    width: 100%;
+    overflow-y: scroll;
+    -webkit-overflow-scrolling: touch;
+}
+
+.iti__arrow{
+    margin-left: 6px;
+    width: 0;
+    height: 0;
+    border-left: 3px solid transparent;
+    border-right: 3px solid transparent;
+    border-top: 4px solid #555;
+}
+
+.iti__country {
+    padding: 5px 10px;
+    outline: none;
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
+
+.iti__country:hover{
+    background: rgba(0,0,0,.05);
+    cursor: pointer;
+}
+
+.iti__flag.iti__in {
+    height: 14px;
+    background-position: -2413px 0;
+}
+
+.iti__dial-code{
+    vertical-align: middle;
+    color: #999;
+}
+
+.iti__country-name{
+    vertical-align: middle;
+    margin-right: 6px;
+}
+
+.iti__arrow--up {
+    border-top: none;
+    border-bottom: 4px solid #555;
+}
