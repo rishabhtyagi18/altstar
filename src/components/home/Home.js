@@ -343,7 +343,7 @@ return (
                 </div>
             </div>
 
-            <div className="home-faq-choose-wrapper">
+            {/* <div className="home-faq-choose-wrapper">
                 <div className="sqs-layout sqs-art-desk-gallery">
                     <h2>Frequently asked questions</h2>
                     
@@ -362,13 +362,13 @@ return (
                         <div className="faq-layout-question-open">+</div>
                     </div>
                 </div>
-            </div>
+            </div> */}
 
-            <div className="home-aboutus-wrapper">
+            {/* <div className="home-aboutus-wrapper">
                 <div className="sqs-layout sqs-art-desk-gallery">
                     <button className="home-about-btn">More Questions</button>
                 </div>
-            </div>
+            </div> */}
         </div>
     </>
 )}

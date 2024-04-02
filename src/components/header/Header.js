@@ -33,6 +33,13 @@ const Header = (props) => {
         z[0].style.overflow = 'scroll';
     }
 
+    const scrollToBottom = () => {
+        window.scrollTo({
+          top: document.body.scrollHeight,
+          behavior: 'smooth',
+        });
+      };
+
     useEffect(()=> {
         if(utils.isLoggedIn()){
             setLoggedIn(true);
@@ -100,14 +107,14 @@ const Header = (props) => {
                                     <div className="header-element-item-active">Resources</div>
                                 </a> */}
                                  <DropDownMenu parentString="Resources" style={props.logoShort ? { fontSize: '1rem' } : null}>
-                                    <a>
+                                    {/* <a>
                                         <div className="dropdown-item-active itemNameBlack">FAQs</div>
                                     </a>
                                     <a>
                                         <div className="dropdown-item-active itemNameBlack">Knowledge Centre</div>
-                                    </a>
+                                    </a> */}
                                     <a>
-                                        <div className="dropdown-item-active itemNameBlack">Contact Us</div>
+                                        <div className="dropdown-item-active itemNameBlack" onClick={scrollToBottom}>Contact Us</div>
                                     </a>
                                 </DropDownMenu>
                             </div>
