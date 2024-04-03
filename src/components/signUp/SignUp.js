@@ -49,15 +49,15 @@ const SignUp = (props) => {
         const inputElem2 = getOtpInputElement(2);
         const inputElem3 = getOtpInputElement(3);
         const inputElem4 = getOtpInputElement(4);
-        // const inputElem5 = getOtpInputElement(5);
-        // const inputElem6 = getOtpInputElement(6);
-        if (inputElem1 && inputElem2 && inputElem3 && inputElem4) {
+        const inputElem5 = getOtpInputElement(5);
+        const inputElem6 = getOtpInputElement(6);
+        if (inputElem1 && inputElem2 && inputElem3 && inputElem4 && inputElem5 && inputElem6)  {
           inputElem1.value = '';
           inputElem2.value = '';
           inputElem3.value = '';
           inputElem4.value = '';
-        //   inputElem5.value = '';
-        //   inputElem6.value = '';
+          inputElem5.value = '';
+          inputElem6.value = '';
           setOtp('');
         }
       };
@@ -111,12 +111,10 @@ const SignUp = (props) => {
         const input2 = getOtpInputElement(2).value;
         const input3 = getOtpInputElement(3).value;
         const input4 = getOtpInputElement(4).value;
-        // const input5 = getOtpInputElement(5).value;
-        // const input6 = getOtpInputElement(6).value;
-        if (input1 && input2 && input3 && input4 
-            // && input5 && input6
-            ) {
-        const otpValue = `${input1}${input2}${input3}${input4}`;
+        const input5 = getOtpInputElement(5).value;
+        const input6 = getOtpInputElement(6).value;
+        if (input1 && input2 && input3 && input4 && input5 && input6) {
+        const otpValue = `${input1}${input2}${input3}${input4}${input5}${input6}`;
         setOtp(otpValue);
         } else {
         setOtp('');
@@ -196,7 +194,7 @@ const SignUp = (props) => {
         if (step === steps.PHONE_NUMBER_SCREEN) {
           sendOTP();
         } else if (step === steps.OTP_SCREEN) {
-          if (isNaN(otp) || otp.length !== 4) {
+          if (isNaN(otp) || otp.length !== 6) {
             setToastConfig({
               show: true,
               showTick: false,
@@ -381,7 +379,7 @@ return (
                               <div className='resend-otp'>{`Resend OTP in `}<span>{`${resendButtonDisabledTime} seconds`}</span></div>
                         )}
 
-                        <button style={((otp.length !== 4 && step === steps.OTP_SCREEN)) ? {opacity:  '0.4'} : {opacity : 'unset'}} onClick={() => submitButtonHandler()} className="signup-continue-btn">
+                        <button style={((otp.length !== 6 && step === steps.OTP_SCREEN)) ? {opacity:  '0.4'} : {opacity : 'unset'}} onClick={() => submitButtonHandler()} className="signup-continue-btn">
                             {waiting ? <PulseLoader color="#FFF" size={10} /> : 'Next'} 
                         </button>
                     </div>
