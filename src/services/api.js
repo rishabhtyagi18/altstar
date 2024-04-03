@@ -18,7 +18,7 @@ export const verifyOtp = async (payload) => {
 };
 
 export const createProfile = async (payload) => {
-	const res = await post(`api/uprofile/v1/userprofile`, payload);
+	const res = await post(`api/v1/altstar/edit_customer`, payload);
 	return res;
 };
 

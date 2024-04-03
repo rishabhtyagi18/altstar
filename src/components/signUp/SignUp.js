@@ -213,6 +213,7 @@ const SignUp = (props) => {
                   localStorage.setItem("accessToken", res.data.access_token.token);
                   localStorage.setItem("is_loggedIn", true);
                   localStorage.setItem("mobile", phoneNumber);
+                  localStorage.setItem("session_key", res.data.session_key);
 
                 //   if(res && res.data && res.data.email){
                 //       localStorage.setItem("email", res.data.email);
@@ -261,7 +262,7 @@ const SignUp = (props) => {
     const descriptionButtonHandler = (form) => {
         console.log('formData',form);
         // setFormData({...formData, 'description':form});
-        const data = {...formData, 'description':form};
+        const data = {...formData, 'nationality':country.name,'session_key': localStorage.getItem('session_key')};
         setWaiting(true);
         createProfile(data).then((res) => {
             if (res.status) {
@@ -279,7 +280,7 @@ const SignUp = (props) => {
               setWaiting(false);
               setToastConfig({
                 show: true,
-                text: res.message || 'Something went wrong',
+                text: 'Something went wrong',
                 showTick: false,
                 time: 1500,
               });
@@ -288,7 +289,7 @@ const SignUp = (props) => {
             setWaiting(false);
             setToastConfig({
               show: true,
-              text: err.response.message || 'Something went wrong',
+              text: 'Something went wrong',
               showTick: false,
               time: 1500,
             });
