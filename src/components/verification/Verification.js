@@ -180,7 +180,7 @@ const Verification = (props) => {
         //   setWaiting(true);
         //   sendOtp({
         //     phone_number: kycFormData.aadharNo,
-        //     source: "trust43_website",
+        //     source: "altstar_customer_dashboard",
         //   })  .then((res) => {
         //       if (res.status) {
         //         setWaiting(false);
@@ -231,7 +231,7 @@ const Verification = (props) => {
         //     verifyOtp({
         //       phone_number: phoneNumber,
         //       otp: otp,
-        //       source : "trust43_website",
+        //       source : "altstar_customer_dashboard",
         //     }).then((res) => {
         //         setWaiting(false);
                 

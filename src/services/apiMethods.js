@@ -1,5 +1,5 @@
 // apiConfigs is defined in public/index.html just before closing of head tag
-const baseUrl = "https://trust43be.thorintech.com/"
+const baseUrl = "https://vecmoconbe.thorintech.com/"
 // const baseUrl = "https://54.191.26.73/"
 
 

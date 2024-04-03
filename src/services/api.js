@@ -8,12 +8,12 @@ import {
 } from "./apiMethods.js";
 
 export const sendOtp = async (payload) => {
-	const res = await post(`api/account/v1/otp`, payload);
+	const res = await post(`api/v1/altstar/send_otp`, payload);
 	return res;
 };
 
 export const verifyOtp = async (payload) => {
-	const res = await post(`api/account/v1/login`, payload);
+	const res = await post(`api/v1/altstar/verify_login`, payload);
 	return res;
 };
 

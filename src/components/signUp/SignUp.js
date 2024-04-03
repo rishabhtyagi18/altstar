@@ -158,7 +158,7 @@ const SignUp = (props) => {
           setWaiting(true);
           sendOtp({
             phone_number: phoneNumber,
-            source: "trust43_website",
+            source: "altstar_customer_dashboard",
           })  .then((res) => {
               if (res.status) {
                 setWaiting(false);
@@ -207,7 +207,7 @@ const SignUp = (props) => {
             verifyOtp({
               phone_number: phoneNumber,
               otp: otp,
-              source : "trust43_website",
+              source : "altstar_customer_dashboard",
             }).then((res) => {
                 setWaiting(false);
                 
