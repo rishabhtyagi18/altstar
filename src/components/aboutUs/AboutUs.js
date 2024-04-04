@@ -3,6 +3,9 @@ import './AboutUs.css';
 import { useNavigate, useLocation } from 'react-router-dom';
 import DeskFilter from '../filters/DeskFilter';
 import MobFilter from '../filters/MobFilter';
+import { getpropertyDetails } from '../../services/api';
+import Toast from '../Toast/Toast';
+import DetailPage from '../detailPage/DetailPage';
 
 const AboutUs = (props) => {
     const location = useLocation();
@@ -10,6 +13,14 @@ const AboutUs = (props) => {
 
     const [selectedFilter, setSelectedFilter] = useState([]);
     const [filters, setFilters] = useState(false);
+    const [resultData, setResultData] = useState([]);
+    const [loader, setLoader] = useState(false);
+    const [toastConfig, setToastConfig] = useState({
+        show: false,
+        text: '',
+        showTick: false,
+        time: 1500,
+    });
     const [filterState, setFilterState] = useState(() => {
         const queryParams = new URLSearchParams(location.search);
         const filters = {
@@ -31,6 +42,29 @@ const AboutUs = (props) => {
         );
         setSelectedFilter(newlySelectedFilters);
     }, [filterState]);
+
+    useEffect(() => {
+        getpropertyDetails().then((res) => {
+            if (res.status) {
+              setLoader(false);
+              setResultData(res.data);
+            } else {
+              setToastConfig({
+                show: true,
+                text: 'Error in fetching artists',
+                showTick: false,
+                time: 1500,
+              });
+            }
+          }, (err) => {
+            setToastConfig({
+              show: true,
+              text: 'Error in fetching artists',
+              showTick: false,
+              time: 1500,
+            });
+          })
+    }, []);
 
     const handleIndividualCheckboxChange = (filterType, filterValue) => {
         setFilterState((prevState) => {
@@ -77,6 +111,10 @@ const AboutUs = (props) => {
         updateURL({});
         // Clear the selected filter type
         setSelectedFilter([]);
+    };
+
+    const handleLearnMore = (propertyInfo) => {
+        navigate('/detail', { state: { propertyInfo } });
     };
 
     const investmentType = [
@@ -166,6 +204,11 @@ const AboutUs = (props) => {
 
 return (
     <>  
+        {loader ? (
+            <div className="loader-component-iu">
+                <div className="loader-iu"></div>
+            </div>
+        ) : null}
         {filters &&
             <MobFilter 
                 hide={() => {
@@ -208,10 +251,10 @@ return (
                 <div>
                     <div className="home-content-wrapper">
                         <div className="investment-main-root">
-                            <div className="investment-brands-main-active">Corporate Bonds (6)</div>
+                            <div className="investment-brands-main-active">Commercial Property (0)</div>
+                            <div className="investment-brands-main">Corporate Bonds (6)</div>
                             <div className="investment-brands-main">Securitized Debt Inst. (4)</div>
                             <div className="investment-brands-main">Startup Equity (0)</div>
-                            <div className="investment-brands-main">Commercial Property (0)</div>
                         </div>
                     </div>
 
@@ -222,75 +265,40 @@ return (
 
                             <div className="recommendations-content-root">
                                 {/* <div className="arrow-recommendations-root-left"><img src="../assets/vector.png" alt="arrow" className="arrow-recommendations-left" /></div> */}
-                                <div className="recommendations-content-internal-root">
-                                    <img src="../assets/mask_group.png" alt="img" className="recommendations-img" />
-
-                                    <div className="recommendations-property-container">
-                                        <div className="recommendations-property-txt">PROPERTY ONE</div>
-                                        <div className="recommendations-property-heading">Introducing Altstar Direct Access Fund II</div>
-                                        <div className="recommendations-property-subhead">Capture the value of market dislocations in our newest value-add funds.</div>
-
-                                        <div className="property-subcontainer-root">
-                                            <div className="recommendations-strategy-container">
-                                                <div className="recommendations-strategy-text">Investment Strategy</div>
-                                                <div className="recommendations-strategy-subtxt">Value add</div>
-                                            </div>
-
-                                            <div className="recommendations-strategy-container">
-                                                <div className="recommendations-strategy-text">Target Fund Size</div>
-                                                <div className="recommendations-strategy-subtxt">$400 mm</div>
-                                            </div>
-
-                                            <div className="recommendations-strategy-container">
-                                                <div className="recommendations-strategy-text">Target Property Types</div>
-                                                <div className="recommendations-strategy-subtxt">Various property types</div>
-                                            </div>
-
-                                            <div className="recommendations-strategy-container">
-                                                <div className="recommendations-strategy-text">Investment minimum</div>
-                                                <div className="recommendations-strategy-subtxt">50K</div>
-                                            </div>
-                                        </div>
-                                        <button onClick={() => navigate('/detail')} className="recommendations-learn-btn">Learn More</button>
-                                    </div>
-                                </div>
-
-                                <div className="recommendations-content-internal-root">
-                                    <img src="../assets/mask_group.png" alt="img" className="recommendations-img" />
-
-                                    <div className="recommendations-property-container">
-                                        <div className="recommendations-property-txt">PROPERTY TWO</div>
-                                        <div className="recommendations-property-heading">Introducing Altstar Direct Access Fund II</div>
-                                        <div className="recommendations-property-subhead">Capture the value of market dislocations in our newest value-add funds.</div>
+                                {resultData?.map((ele, index) => (
+                                    <div className="recommendations-content-internal-root" key={ele.id}>
+                                        <img src="../assets/mask_group.png" alt="img" className="recommendations-img" />
                                         
-                                        <div className="property-subcontainer-root">
-                                            <div className="recommendations-strategy-container">
-                                                <div className="recommendations-strategy-text">Investment Strategy</div>
-                                                <div className="recommendations-strategy-subtxt">Value add</div>
-                                            </div>
+                                        <div className="recommendations-property-container">
+                                            <div className="recommendations-property-txt">{ele.property_info?.name}</div>
+                                            <div className="recommendations-property-heading">{ele.headline}</div>
+                                            <div className="recommendations-property-subhead">{ele.headline_summary}</div>
 
-                                            <div className="recommendations-strategy-container">
-                                                <div className="recommendations-strategy-text">Target Fund Size</div>
-                                                <div className="recommendations-strategy-subtxt">$400 mm</div>
-                                            </div>
+                                            <div className="property-subcontainer-root">
+                                                <div className="recommendations-strategy-container">
+                                                    <div className="recommendations-strategy-text">Investment Strategy</div>
+                                                    <div className="recommendations-strategy-subtxt">{ele.investment_strategy}</div>
+                                                </div>
 
-                                            <div className="recommendations-strategy-container">
-                                                <div className="recommendations-strategy-text">Target Property Types</div>
-                                                <div className="recommendations-strategy-subtxt">Various property types</div>
-                                            </div>
+                                                <div className="recommendations-strategy-container">
+                                                    <div className="recommendations-strategy-text">Target Fund Size</div>
+                                                    <div className="recommendations-strategy-subtxt">{ele.target_fund_size}</div>
+                                                </div>
 
-                                            <div className="recommendations-strategy-container">
-                                                <div className="recommendations-strategy-text">Investment minimum</div>
-                                                <div className="recommendations-strategy-subtxt">50K</div>
+                                                <div className="recommendations-strategy-container">
+                                                    <div className="recommendations-strategy-text">Target Property Types</div>
+                                                    <div className="recommendations-strategy-subtxt">{ele.target_property_type}</div>
+                                                </div>
+
+                                                <div className="recommendations-strategy-container">
+                                                    <div className="recommendations-strategy-text">Investment minimum</div>
+                                                    <div className="recommendations-strategy-subtxt">{ele.min_investment}</div>
+                                                </div>
                                             </div>
+                                            <button className="recommendations-learn-btn" onClick={() => handleLearnMore(ele.property_info)}>Learn More</button>
                                         </div>
-                                        <button onClick={() => navigate('/detail')} className="recommendations-learn-btn">Learn More</button>
                                     </div>
-                                </div>
-
-                                {/* <div className="arrow-recommendations-root">
-                                    <img src="../assets/vector.png" alt="arrow" className="arrow-recommendations-right" />
-                                </div> */}
+                                ))}
                             </div>
                         </div>
                     </div>
@@ -301,6 +309,20 @@ return (
                 </div>
             </div>
         </div>
+        {toastConfig.show ? (
+			<Toast
+				hideHandler={setToastConfig}
+				time={toastConfig.time}
+				tickIcon={toastConfig.showTick}
+				text={toastConfig.text}
+				style={{
+					marginLeft: 'auto',
+					marginRight: 'auto',
+					width: 'fit-content',
+					justifyContent: 'center',
+				}}
+			/>
+		) : null}
     </>
 )}
 

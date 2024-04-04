@@ -215,14 +215,13 @@ const SignUp = (props) => {
                   localStorage.setItem("mobile", phoneNumber);
                   localStorage.setItem("session_key", res.data.session_key);
 
-                //   if(res && res.data && res.data.email){
-                //       localStorage.setItem("email", res.data.email);
-                //       localStorage.setItem("name", res.data.name);
-                //       localStorage.setItem("first_name", res.data.first_name);
-                //       navigate('/')
-                //   }else{
+                  if(res && res.data && res.data.email){
+                      localStorage.setItem("email", res.data.email);
+                      localStorage.setItem("name", res.data.name);
+                      navigate('/about')
+                  }else{
                     setStep(steps.PROFILE_SCREEN);
-                //   }
+                  }
                   setToastConfig({
                     show: true,
                     text: 'Logged In',
@@ -255,12 +254,12 @@ const SignUp = (props) => {
 
     const profileButtonHandler = (form) => {
         setStep(steps.VERFIY_IDENTITY_SCREEN);
-        console.log('formData',form);
+        // console.log('formData',form);
         setFormData({...form});
     }
 
     const descriptionButtonHandler = (form) => {
-        console.log('formData',form);
+        // console.log('formData',form);
         // setFormData({...formData, 'description':form});
         const data = {...formData, 'nationality':country.name,'session_key': localStorage.getItem('session_key')};
         setWaiting(true);

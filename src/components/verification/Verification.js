@@ -280,18 +280,18 @@ const Verification = (props) => {
 
     const bankAccountButtonHandler = (form) => {
         setStep(steps.E_SIGN_SCREEN);
-        console.log('setBankFormData',form);
+        // console.log('setBankFormData',form);
         setBankFormData({...form});
     }
 
     const esignButtonHandler = (form) => {
         setStep(steps.ADVANCE_PAYMENT_SCREEN);
-        console.log('formData',form);
+        // console.log('formData',form);
         setFormData({...form});
     }
 
     const descriptionButtonHandler = (form) => {
-        console.log('formData',form);
+        // console.log('formData',form);
         // setFormData({...formData, 'description':form});
         const data = {...formData, 'description':form};
         setWaiting(true);

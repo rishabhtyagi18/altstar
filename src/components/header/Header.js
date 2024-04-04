@@ -91,7 +91,7 @@ const Header = (props) => {
                             </div>
 
                             <div className="header-element">
-                                <a href="/detail">
+                                <a href="/">
                                     <div className="header-element-item-active">Opportunities</div>
                                 </a>
                             </div>
@@ -134,7 +134,7 @@ const Header = (props) => {
 
                         {loggedIn ? 
                             <DropDownMenu 
-                                parentString={localStorage.getItem("first_name") ? localStorage.getItem("first_name") : "User"}
+                                parentString={localStorage.getItem("name") ? localStorage.getItem("name") : "User"}
                                 style={{ fontWeight: "600" }}
                                 dropDownStyle={{ minWidth: "100px", marginLeft: "17px" }}
                             >

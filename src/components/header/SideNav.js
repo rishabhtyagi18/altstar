@@ -61,10 +61,10 @@ const SideNav = (props) => {
                         <div className='sidePanelAnchor' onClick={() => {navigate('/about'); props.hide()}}>
                             About Us
                         </div>
-                        <div className='sidePanelAnchor' onClick={() => {navigate('/detail'); props.hide()}}>
+                        <div className='sidePanelAnchor' onClick={() => {navigate('/'); props.hide()}}>
                             Opportunities
                         </div>
-                        <div className='sidePanelAnchor' onClick={() => {navigate('/detail'); props.hide()}}>
+                        <div className='sidePanelAnchor' onClick={() => {navigate('/'); props.hide()}}>
                             How it works
                         </div>
                         <div className='sidePanelAnchorDropdown' onClick={() => openProfileNav()}>

@@ -4,7 +4,19 @@ import { useNavigate, useLocation } from 'react-router-dom';
 import ReactApexChart from 'react-apexcharts';
 
 const DetailPage = (props) => {
+    const location = useLocation();
     const navigate = useNavigate();
+    const { propertyInfo } = location.state || {};
+
+    // console.log("propertyInfo ========= ",propertyInfo);
+
+    useEffect(() => {
+        // Redirect to / if propertyInfo doesn't exist
+        if (!propertyInfo) {
+            navigate('/');
+        }
+    }, [propertyInfo, navigate]);
+    
     const [count, setCount] = useState(0);
 
     const IncrementUnit = () => {
@@ -121,37 +133,21 @@ return (
                     </div>
 
                     <div className="sqs-layout sqs-art-desk-gallery">
-                        <h2>Prestige Tech Platina</h2>
-                        <p className="sqsrte-large-heading">Outer Ring Road, Banglore</p>
+                        <h2>{propertyInfo?.name}</h2>
+                        <p className="sqsrte-large-heading">{propertyInfo?.location}</p>
                         {/* <br></br> */}
-                        <p className="sqsrte-large">Over the past 20 years, private real estate’s risk adjusted returns have been comparable to both equitiews and public REITs with the benefits.</p>
+                        <p className="sqsrte-large">{propertyInfo?.description}</p>
 
                         <div className="appreciation-investment-root">
                             <div className="appreciation-investment-mainroot">
                                 <div className="appreciation-investment-container">
-                                    <div className="appreciation-investment-sub-container">
-                                        <div className="appreciation-invest-img-container"><img src="../assets/yield.png" alt="yield" className="appreciation-invest-img" /></div>
-                                        <div className="appreciation-invest-rental-text">10.00%</div>
-                                        <span className="appreciation-invest-rental-sub-text">High Rental Yield</span>
-                                    </div>
-
-                                    <div className="appreciation-investment-sub-container">
-                                        <div className="appreciation-invest-img-container"><img src="../assets/return-of-investment.png" alt="return-of-investment" className="appreciation-invest-img" /></div>
-                                        <div className="appreciation-invest-rental-text">17.50%</div>
-                                        <span className="appreciation-invest-rental-sub-text">High Return</span>
-                                    </div>
-
-                                    <div className="appreciation-investment-sub-container">
-                                        <div className="appreciation-invest-img-container"><img src="../assets/rupee.png" alt="rupee" className="appreciation-invest-img" /></div>
-                                        <div className="appreciation-invest-rental-text">10,600psf</div>
-                                        <span className="appreciation-invest-rental-sub-text">Attractive Price</span>
-                                    </div>
-
-                                    <div className="appreciation-investment-sub-container">
-                                        <div className="appreciation-invest-img-container"><img src="../assets/location.png" alt="location" className="appreciation-invest-img" /></div>
-                                        <div className="appreciation-invest-rental-text">Outer Ring Road</div>
-                                        <span className="appreciation-invest-rental-sub-text">Location</span>
-                                    </div>
+                                    {propertyInfo?.return_desc.map((ele, i) => (
+                                        <div className="appreciation-investment-sub-container" key={ele.type}>
+                                            <div className="appreciation-invest-img-container"><img src={ele.icon} alt="yield" className="appreciation-invest-img" /></div>
+                                            <div className="appreciation-invest-rental-text">{ele.value}</div>
+                                            <span className="appreciation-invest-rental-sub-text">{ele.text}</span>
+                                        </div>
+                                     ))}
                                 </div>
 
                                 <div className="appreciation-unit-purchase-root">
@@ -182,60 +178,20 @@ return (
                             <th>Year 4</th>
                             <th>Year 5</th>
                         </tr>
-                        <tr>
-                            <td className="appreciation-table-strong">Investment Value</td>
-                            <td>(10,00,000)</td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                        </tr>
-                        <tr>
-                            <td className="appreciation-table-strong">Yields</td>
-                            <td></td>
-                            <td>80,000</td>
-                            <td>80,000</td>
-                            <td>80,000</td>
-                            <td>80,000</td>
-                            <td>80,000</td>
-                        </tr>
-                        <tr>
-                            <td className="appreciation-table-strong">Additional Yields</td>
-                            <td>10,000</td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                        </tr>
-                        <tr>
-                            <td className="appreciation-table-strong">Liquidated Value</td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td>12,76,281</td>
-                        </tr>
-                        <tr>
-                            <td className="appreciation-table-strong">Total Cash Flow</td>
-                            <td>(10,00,000)</td>
-                            <td>80,000</td>
-                            <td>80,000</td>
-                            <td>80,000</td>
-                            <td>80,000</td>
-                            <td>13,56,281</td>
-                        </tr>
-                        <tr>
-                            <td className="appreciation-table-strong">Net IRR</td>
-                            <td>13%</td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                        </tr>
+                        {propertyInfo?.investment_return.map((ele, index) => {
+                            const newKey = ['Investment Value', 'Yields', 'Additional Yields', 'Liquidated Value', 'Total Cash Flow', 'Net IRR'];
+                            const item  = newKey[index];
+                            return (
+                            <tr key={index}>
+                                <td className="appreciation-table-strong">{item}</td>
+                                <td>{ele.investment_value}</td>
+                                <td>{ele.yield}</td>
+                                <td>{ele.additional_yield}</td>
+                                <td>{ele.liquidated_value}</td>
+                                <td>{ele.total_cash_flow}</td>
+                                <td>{ele.net_irr}</td>
+                            </tr>
+                        )})}
                     </table>
                 </div>
             </div>
@@ -264,31 +220,31 @@ return (
                     <div className="detailPage-attachement-list-box">
                         <img src="../assets/vector.png" alt="vector" className="attachement-vector-img" />
                         <div className="detailPage-attachement-list-strong">Total Issue:</div>
-                        <div className="detailPage-attachement-list-subtext">10,00,00,000</div>
+                        <div className="detailPage-attachement-list-subtext">{propertyInfo?.current_report?.total_issue}</div>
                     </div>
 
                     <div className="detailPage-attachement-list-box">
                         <img src="../assets/vector.png" alt="vector" className="attachement-vector-img" />
                         <div className="detailPage-attachement-list-strong">Type:</div>
-                        <div className="detailPage-attachement-list-subtext">Invoice Discounting</div>
+                        <div className="detailPage-attachement-list-subtext">{propertyInfo?.current_report?.type}</div>
                     </div>
                     
                     <div className="detailPage-attachement-list-box">
                         <img src="../assets/vector.png" alt="vector" className="attachement-vector-img" />
                         <div className="detailPage-attachement-list-strong">Minimum Investment:</div>
-                        <div className="detailPage-attachement-list-subtext">10,00,000</div>
+                        <div className="detailPage-attachement-list-subtext">{propertyInfo?.current_report?.min_investment}</div>
                     </div>
 
                     <div className="detailPage-attachement-list-box">
                         <img src="../assets/vector.png" alt="vector" className="attachement-vector-img" />
                         <div className="detailPage-attachement-list-strong">Vendor:</div>
-                        <div className="detailPage-attachement-list-subtext">JSW</div>
+                        <div className="detailPage-attachement-list-subtext">{propertyInfo?.current_report?.vendor}</div>
                     </div>
 
                     <div className="detailPage-attachement-list-box">
                         <img src="../assets/vector.png" alt="vector" className="attachement-vector-img" />
                         <div className="detailPage-attachement-list-strong">Pre Tax IRR:</div>
-                        <div className="detailPage-attachement-list-subtext">17%</div>
+                        <div className="detailPage-attachement-list-subtext">{propertyInfo?.current_report?.pre_tax_irr}</div>
                     </div>
                 </div>
 

@@ -16,12 +16,12 @@ const RoutingComponent = (props) => {
     useEffect(() => {
         if(window.location.pathname === "/login" || window.location.pathname === "/verification") {
             setFooterPage(false);
-            console.log("entering here");
+            // console.log("entering here");
         } else {
             setFooterPage(true);
-            console.log("eome in elese part");
+            // console.log("eome in elese part");
         }
-        console.log(window.location.pathname,"window.location.pathname");
+        // console.log(window.location.pathname,"window.location.pathname");
     },[footerPage, window.location.pathname])
 
     return(
