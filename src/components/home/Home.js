@@ -186,7 +186,9 @@ return (
             
             <div className="home-aboutus-wrapper-learn">
                 <div className="sqs-layout sqs-art-desk-gallery">
-                    <button className="home-about-btn" onClick={() => { navigate('/about')}}>Learn More</button>
+                    <a href="/about">
+                    <button className="home-about-btn">Learn More</button>
+                    </a>
                 </div>
             </div>
 
