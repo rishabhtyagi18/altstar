@@ -85,22 +85,22 @@ const Header = (props) => {
                     <div className="header-display-desktop">
                         <div className="header-display-desktop-subroot">
                             <div className="header-element">
-                                <a href="/about">
+                                <a href="https://altstarcapital.com" target="_blank">
                                     <div className="header-element-item-active">About Us</div>
                                 </a>
                             </div>
 
                             <div className="header-element">
-                                <a href="/">
+                                <a href="/about">
                                     <div className="header-element-item-active">Opportunities</div>
                                 </a>
                             </div>
 
-                            <div className="header-element">
+                            {/* <div className="header-element">
                                 <a>
                                     <div className="header-element-item-active">How it works</div>
                                 </a>
-                            </div>
+                            </div> */}
 
                             <div className="header-element">
                                 {/* <a>

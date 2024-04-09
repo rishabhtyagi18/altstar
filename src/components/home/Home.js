@@ -99,7 +99,9 @@ return (
                 <img src="../assets/Altstar-Banner.png" alt="banner" />
                 <div className="home-story-content home-text-first">
                     <p className="home-story-text">Smart investing in Real estate</p>
+                    <a href="/about">
                     <button className="home-learn-btn">View Opportunities</button>
+                    </a>
                 </div>
             </div>
 
@@ -107,7 +109,9 @@ return (
                 <img src="../assets/Altstar-Banner.png" alt="banner" />
                 <div className="home-story-content home-text-first">
                     <p className="home-story-text">Smart investing in Real estate</p>
+                    <a href="/about">
                     <button className="home-learn-btn">View Opportunities</button>
+                    </a>
                 </div>
             </div>
 
@@ -120,9 +124,9 @@ return (
             </div>
             
             <div className="home-aboutus-wrapper home-wrapper-about-root">
-                <div className="sqs-layout sqs-art-desk-gallery">
-                    <button className="home-about-btn">About us</button>
-                </div>
+                <a href="https://altstarcapital.com" target="_blank" className="sqs-layout sqs-art-desk-gallery">
+                    <button className="home-about-btn" >About us</button>
+                </a>
             </div>
 
             <div className="home-content-choose-wrapper">
@@ -182,7 +186,7 @@ return (
             
             <div className="home-aboutus-wrapper-learn">
                 <div className="sqs-layout sqs-art-desk-gallery">
-                    <button className="home-about-btn">Learn More</button>
+                    <button className="home-about-btn" onClick={() => { navigate('/about')}}>Learn More</button>
                 </div>
             </div>
 
@@ -203,11 +207,11 @@ return (
                 </div>
             </div>
 
-            <div className="home-aboutus-wrapper-process">
+            {/* <div className="home-aboutus-wrapper-process">
                 <div className="sqs-layout sqs-art-desk-gallery">
                     <button className="home-about-btn">See Our Process</button>
                 </div>
-            </div>
+            </div> */}
 
             <div className="home-content-recommendations-wrapper">
                 <div className="sqs-layout sqs-commitment-roots">
@@ -304,7 +308,7 @@ return (
                 </div>
             </div>
 
-            <div className="home-content-choose-wrapper">
+            {/* <div className="home-content-choose-wrapper">
                 <div className="sqs-layout sqs-art-desk-gallery">
                     <p className="choose-altstar-txt">ALTSTAR RESOURCES</p>
                     <h2>Explore Our Latest Blogs and Insights</h2>
@@ -335,12 +339,12 @@ return (
                         </div>
                     </div>
                 </div>
-            </div>
+            </div> */}
 
             <div className="home-aboutus-wrapper">
-                <div className="sqs-layout sqs-art-desk-gallery">
+                {/* <div className="sqs-layout sqs-art-desk-gallery">
                     <button className="home-about-btn">Read Our Blog</button>
-                </div>
+                </div> */}
             </div>
 
             {/* <div className="home-faq-choose-wrapper">

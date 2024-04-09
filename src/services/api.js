@@ -22,6 +22,11 @@ export const createProfile = async (payload) => {
 	return res;
 };
 
+export const saveAccountDetails = async (payload) => {
+	const res = await post(`api/v1/altstar/customer_kyc`, payload);
+	return res;
+};
+
 export const getpropertyDetails = async (payload) => {
 	const res = await get(`api/v1/altstar/property?target_property_type=commercial`, payload);
 	return res;

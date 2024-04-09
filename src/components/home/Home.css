@@ -377,7 +377,7 @@
     bottom: 0;
     left: 0;
     overflow: hidden;
-    pointer-events: none;
+    /* pointer-events: none; */
     background-color: hsla( 0,0%,6.2745098039215685% ,1);
 }
 

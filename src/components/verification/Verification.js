@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
 import './Verification.css';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useLocation } from 'react-router-dom';
 import Toast from '../Toast/Toast';
-import { verifyOtp, sendOtp, createProfile} from "../../services/api";
+import { verifyOtp, sendOtp, createProfile,saveAccountDetails} from "../../services/api";
 import Profile from '../profile/Profile';
 import { PulseLoader } from 'react-spinners';
 import VerifyIdentity from '../verifyIdentity/VerifyIdentity';
@@ -13,6 +13,8 @@ import AdvancePayment from './AdvancePayment';
 import MultiStepProgressBar from '../multiStepProgressBar/MultiStepProgressBar';
 
 const Verification = (props) => {
+    const location = useLocation();
+    const { count } = location.state || {};
     const sortedData = utils.getCountryFlag();
     const keyToPrioritize = 'preferred';
     const valueToPrioritize = !0;
@@ -56,24 +58,39 @@ const Verification = (props) => {
         return document.getElementById(`otpInput${index}`);
     }
 
-    const clearOTP = () => {
-        const inputElem1 = getOtpInputElement(1);
-        const inputElem2 = getOtpInputElement(2);
-        const inputElem3 = getOtpInputElement(3);
-        const inputElem4 = getOtpInputElement(4);
-        // const inputElem5 = getOtpInputElement(5);
-        // const inputElem6 = getOtpInputElement(6);
-        if (inputElem1 && inputElem2 && inputElem3 && inputElem4) {
-          inputElem1.value = '';
-          inputElem2.value = '';
-          inputElem3.value = '';
-          inputElem4.value = '';
-        //   inputElem5.value = '';
-        //   inputElem6.value = '';
-          setOtp('');
-        }
-      };
+    function validatePAN(panNumber) {
+      // PAN format regex pattern
+      const panPattern = /^[A-Z]{5}[0-9]{4}[A-Z]$/;
+    
+      // Check if PAN number matches the pattern
+      if (!panPattern.test(panNumber)) {
+        return false; // PAN number format is incorrect
+      }
+    
+      // Check if the fifth character is an alphabetical letter
+      const fifthChar = panNumber.charAt(4);
+      if (!/[A-Z]/.test(fifthChar)) {
+        return false; // Fifth character should be an alphabetical letter
+      }
+    
+      // Check if the ninth character is an alphabetical letter
+      const ninthChar = panNumber.charAt(9);
+      if (!/[A-Z]/.test(ninthChar)) {
+        return false; // Ninth character should be an alphabetical letter
+      }
+    
+      // PAN number format is valid
+      return true;
+    }
 
+    function validateAadhar(aadharNumber) {
+      // Remove white spaces and hyphens
+      aadharNumber = aadharNumber.replace(/\s/g, "").replace(/-/g, "");
+    
+      // Check if Aadhar number is 12 digits
+      return /^\d{12}$/.test(aadharNumber);
+    }
+    
     const handleInputChange = (event) => {
         const { name, value, type } = event.target;
         
@@ -106,176 +123,44 @@ const Verification = (props) => {
         };
     }, [resendButtonDisabledTime]);
 
-    const onKeyUpEvent = (index, event) => {
-        const eventCode = event.which || event.keyCode;
-        if (getOtpInputElement(index).value.length === 1) {
-        if (index !== 6) {
-            getOtpInputElement(index + 1).focus();
-        } else {
-            getOtpInputElement(index).blur();
-        }
-        }
-        if (getOtpInputElement(index).value.length > 1) {
-        getOtpInputElement(index).value = getOtpInputElement(index).value.slice(0, 1);
-        }
-        if (eventCode === 8 && index !== 1) {
-        getOtpInputElement(index - 1).focus();
-        }
-        const input1 = getOtpInputElement(1).value;
-        const input2 = getOtpInputElement(2).value;
-        const input3 = getOtpInputElement(3).value;
-        const input4 = getOtpInputElement(4).value;
-        // const input5 = getOtpInputElement(5).value;
-        // const input6 = getOtpInputElement(6).value;
-        if (input1 && input2 && input3 && input4 
-            // && input5 && input6
-            ) {
-        const otpValue = `${input1}${input2}${input3}${input4}`;
-        setOtp(otpValue);
-        } else {
-        setOtp('');
-        }
-    };
-
-    const onFocusEvent = (index) => {
-        for (let item = 1; item < index; item += 1) {
-        const currentElement = getOtpInputElement(item);
-        if (!currentElement.value) {
-            currentElement.focus();
-            break;
-        }
-        }
-    };
-
-    const onOTPBoxValueChange = (event) => {
-        const inputEl = event.target;
-        if (inputEl.value.length > 1) {
-        inputEl.value = inputEl.value.slice(0, 1);
-        }
-    };
-
-    const handleCountryVerify = (ele) => {
-        setCountry(ele);
-    }
-
     const sendOTP = (resend) => {
         if (!(kycFormData.panNo) || (kycFormData.panNo.trim() === '')) {
+          setToastConfig({
+            show: true,
+            showTick: false,
+            text: 'Enter PAN Number',
+          });
+          return ;
+        } 
+        if(isNaN(kycFormData.aadharNo) || (kycFormData.aadharNo.trim() === '')) {
+            setToastConfig({
+                show: true,
+                showTick: false,
+                text: 'Enter Aadhar Number',
+            });
+            return;
+        } 
+        if(!validatePAN(kycFormData.panNo)){
           setToastConfig({
             show: true,
             showTick: false,
             text: 'Enter a valid PAN',
           });
           return ;
-        } 
-        else if(isNaN(kycFormData.aadharNo) || (kycFormData.aadharNo.trim() === '')) {
-            setToastConfig({
-                show: true,
-                showTick: false,
-                text: 'Enter a valid Aadhar',
-            });
-            return;
-        } 
-        {
-        //   const code = country.dial_code.replace('+','');
-        //   setWaiting(true);
-        //   sendOtp({
-        //     phone_number: kycFormData.aadharNo,
-        //     source: "altstar_customer_dashboard",
-        //   })  .then((res) => {
-        //       if (res.status) {
-        //         setWaiting(false);
-                setStep(steps.BANK_ACCOUNT_DETAILS);
-        //         setToastConfig({
-        //           show: true,
-        //           text: `Success`,
-        //           showTick: true,
-        //           time: 1500,
-        //         });
-        //         setResendButtonDisabledTime(30);
-        //       } else {
-        //         setToastConfig({
-        //           show: true,
-        //           text: res.message || 'Error in sending OTP',
-        //           showTick: true,
-        //           time: 1500,
-        //         });
-        //         setWaiting(false);
-        //       }
-        //     }, (err) => {
-        //       setToastConfig({
-        //         show: true,
-        //         text: err.message || 'Error in sending OTP',
-        //         showTick: true,
-        //         time: 1500,
-        //       });
-        //       setWaiting(false);
-        //     },
-        //   );
         }
+        if(!validateAadhar(kycFormData.aadharNo)){
+          setToastConfig({
+            show: true,
+            showTick: false,
+            text: 'Enter a valid Aadhar',
+          });
+          return ;
+        }
+        setStep(steps.BANK_ACCOUNT_DETAILS);
     };
 
     const submitButtonHandler = () => {
-        // if (step === steps.KYC_VERIFICATION) {
           sendOTP();
-        // } 
-        // else if (step === steps.BANK_ACCOUNT_DETAILS) {
-        //     console.log("bank form dsta h hdhdjhdjd", bankFormData);
-        //   if (isNaN(bankFormData.accName) || (bankFormData.accName.trim() === '')) {
-        //     setToastConfig({
-        //       show: true,
-        //       showTick: false,
-        //       text: 'Enter a Account Name',
-        //     });
-        //   } else {
-        //     setWaiting(true);
-        //     verifyOtp({
-        //       phone_number: phoneNumber,
-        //       otp: otp,
-        //       source : "altstar_customer_dashboard",
-        //     }).then((res) => {
-        //         setWaiting(false);
-                
-        //         if (res.status) {
-        //           localStorage.setItem("accessToken", res.data.access_token.token);
-        //           localStorage.setItem("is_loggedIn", true);
-        //           localStorage.setItem("mobile", phoneNumber);
-
-        //           if(res && res.data && res.data.email){
-        //               localStorage.setItem("email", res.data.email);
-        //               localStorage.setItem("name", res.data.name);
-        //               localStorage.setItem("first_name", res.data.first_name);
-        //               navigate('/')
-        //           }else{
-        //             setStep(steps.E_SIGN_SCREEN);
-        //           }
-        //           setToastConfig({
-        //             show: true,
-        //             text: 'Logged In',
-        //             showTick: true,
-        //             time: 1500,
-        //           });
-        //         } else {
-        //           clearOTP();
-        //           setToastConfig({
-        //             show: true,
-        //             text: res.message || 'Wrong OTP',
-        //             showTick: false,
-        //             time: 1500,
-        //           });
-        //         }
-        //       }, (err) => {
-        //         setWaiting(false);
-        //         clearOTP();
-        //         setToastConfig({
-        //           show: true,
-        //           text: err.response.message || 'Verification Failed!',
-        //           showTick: false,
-        //           time: 1500,
-        //         });
-        //       },
-        //     );
-        //   }
-        // }
     };
 
     const bankAccountButtonHandler = (form) => {
@@ -287,31 +172,42 @@ const Verification = (props) => {
     const esignButtonHandler = (form) => {
         setStep(steps.ADVANCE_PAYMENT_SCREEN);
         // console.log('formData',form);
-        setFormData({...form});
+        // setFormData({...form});
     }
 
     const descriptionButtonHandler = (form) => {
         // console.log('formData',form);
         // setFormData({...formData, 'description':form});
-        const data = {...formData, 'description':form};
+        const data = {...formData,
+         'panCard':kycFormData.panNo,
+         'aadharCard' : kycFormData.panNo,
+         'account_holder_name' : bankFormData.accName,
+         'account_number' : bankFormData.accNo,
+         'confirm_account_number' : bankFormData.reAccNo,
+         'ifsc_code' : bankFormData.ifscCode,
+         'phone' : localStorage.getItem('mobile') ? localStorage.getItem('mobile') : "8658334656",
+         'investment_amount' : form.invAmt,
+         'advanced_amount':  form.advAmt
+        };
+        console.log('descriptionButtonHandler========>',data)
         setWaiting(true);
-        createProfile(data).then((res) => {
+        saveAccountDetails(data).then((res) => {
             if (res.status) {
               setWaiting(false);
             //   setStep(steps.REVIEW_SCREEN);
-                navigate('/')
+                // navigate('/')
               setToastConfig({
                 show: true,
-                text: 'Profile created successfully',
+                text: 'Details save successfully! Payment Gateway Intigration Pending',
                 showTick: true,
-                time: 1500,
+                time: 3000,
               });
               // if (afterLoggedIn) afterLoggedIn();
             } else {
               setWaiting(false);
               setToastConfig({
                 show: true,
-                text: res.message || 'Something went wrong',
+                text: 'Something went wrong',
                 showTick: false,
                 time: 1500,
               });
@@ -320,7 +216,7 @@ const Verification = (props) => {
             setWaiting(false);
             setToastConfig({
               show: true,
-              text: err.response.message || 'Something went wrong',
+              text: 'Something went wrong',
               showTick: false,
               time: 1500,
             });
@@ -409,6 +305,7 @@ return (
                     descriptionButtonHandler={descriptionButtonHandler}
                     step={step}
                     steps={steps}
+                    count={count}
                 />
               </>
         )}

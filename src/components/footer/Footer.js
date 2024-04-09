@@ -16,7 +16,7 @@ const Footer = (props) => {
                         <div className="footer-root-link-txt">Home</div>
                         <div className="footer-root-link-txt">Opportunities</div>
                         <div className="footer-root-link-txt">About Us</div>
-                        <div className="footer-root-link-txt">How it works</div>
+                        {/* <div className="footer-root-link-txt">How it works</div> */}
                         <div className="footer-root-link-txt">Resources</div>
                         <div className="footer-root-link-txt">FAQs</div>
                     </div>

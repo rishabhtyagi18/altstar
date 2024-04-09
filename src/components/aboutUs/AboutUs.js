@@ -113,8 +113,8 @@ const AboutUs = (props) => {
         setSelectedFilter([]);
     };
 
-    const handleLearnMore = (propertyInfo) => {
-        navigate('/detail', { state: { propertyInfo } });
+    const handleLearnMore = (propertyInfo, mainData) => {
+        navigate('/detail', { state: { propertyInfo, mainData } });
     };
 
     const investmentType = [
@@ -295,7 +295,7 @@ return (
                                                     <div className="recommendations-strategy-subtxt">{ele.min_investment}</div>
                                                 </div>
                                             </div>
-                                            <button className="recommendations-learn-btn" onClick={() => handleLearnMore(ele.property_info)}>Learn More</button>
+                                            <button className="recommendations-learn-btn" onClick={() => handleLearnMore(ele.property_info, ele)}>Learn More</button>
                                         </div>
                                     </div>
                                 ))}

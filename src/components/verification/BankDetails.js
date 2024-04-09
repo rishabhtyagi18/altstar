@@ -28,22 +28,41 @@ const BankDetails = (props) => {
           }))
     };
 
+    const handleChange = (event) => {
+        const { name, value, type }  = event.target;
+        
+        // Use a regular expression to remove non-digit characters
+        const digitOnly = value.replace(/\D/g, '');
+    
+        // Update the state with the cleaned input
+        setBankFormData((prevState) => ({
+            ...prevState,
+            [name]: digitOnly,
+          }))
+      };
+
     const bankDetailsSubmit = () => {
         if (!bankFormData.accName || bankFormData.accName.trim() === '') {
           setToastConfig({ ...toastConfig, show: true, text: 'Please Enter Account Name' });
+          return ;
         } 
-        else if(!bankFormData.accNo || bankFormData.accNo.trim() === '') {
+        if(!bankFormData.accNo || bankFormData.accNo.trim() === '') {
             setToastConfig({ ...toastConfig, show: true, text: 'Please Enter a Account No' });
+            return ;
         }
-        else if(!bankFormData.reAccNo || bankFormData.reAccNo.trim() === '') {
+        if(!bankFormData.reAccNo || bankFormData.reAccNo.trim() === '') {
             setToastConfig({ ...toastConfig, show: true, text: 'Please Re-Enter a Account No' });
+            return ;
         }
-        else if (!bankFormData.ifscCode || bankFormData.ifscCode.trim() === '') {
-          setToastConfig({ ...toastConfig, show: true, text: 'Please Enter a IFSC Code' });
-        } else {
-            props.bankAccountButtonHandler(bankFormData);
-
+        if (!bankFormData.ifscCode || bankFormData.ifscCode.trim() === '') {
+            setToastConfig({ ...toastConfig, show: true, text: 'Please Enter a IFSC Code' });
+            return ;
         }
+        if (bankFormData.accNo.trim()!= bankFormData.reAccNo.trim()) {
+            setToastConfig({ ...toastConfig, show: true, text: 'Account no does not match' });
+            return ;
+          } 
+        props.bankAccountButtonHandler(bankFormData);
     }
 
 return (
@@ -68,20 +87,20 @@ return (
                         <input
                             type="tel"
                             name="accNo"
-                            // value=""
+                            value={bankFormData.accNo}
                             className='mobile-input'
                             placeholder="Enter Account No"
-                            onChange={handleInputChange}
+                            onChange={handleChange}
                         />
 
                         <label>Re-Enter Account No.</label>
                         <input
                             type="tel"
                             name="reAccNo"
-                            // value=""
+                            value={bankFormData.reAccNo}
                             className='mobile-input'
                             placeholder="Re-Enter Account No"
-                            onChange={handleInputChange}
+                            onChange={handleChange}
                         />
 
                         <label>Enter IFSC Code</label>

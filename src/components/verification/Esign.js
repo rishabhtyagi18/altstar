@@ -60,7 +60,7 @@ return (
                         <div className="info-note-txt">Note: You will sign the documents and make the full payment after we have collected the full EOI.</div>
 
                         <button 
-                            style={(((bankFormData.accName.length < 1 || bankFormData.accNo.length < 1 || bankFormData.reAccNo.length < 1 || bankFormData.ifscCode.length < 1) && props.step === props.steps.E_SIGN_SCREEN)) ? {opacity:  '0.4'} : {opacity : 'unset'}} 
+                            // style={(((bankFormData.accName.length < 1 || bankFormData.accNo.length < 1 || bankFormData.reAccNo.length < 1 || bankFormData.ifscCode.length < 1) && props.step === props.steps.E_SIGN_SCREEN)) ? {opacity:  '0.4'} : {opacity : 'unset'}} 
                             className="signup-continue-btn" 
                                 onClick={() => bankDetailsSubmit()}
                             >

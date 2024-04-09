@@ -6,8 +6,12 @@ import { Link } from "react-router-dom";
 
 const SideNav = (props) => {
     const navigate = useNavigate();
-    const location = useLocation();
+    // const location = useLocation();
     const [toggle, setToggle] = useState(false)
+    const handleClick = () => {
+        window.location.href = "https://altstarcapital.com";
+        props.hide()
+    }
     function openProfileNav() {
         if (toggle) {
           setToggle(false)
@@ -15,6 +19,13 @@ const SideNav = (props) => {
           setToggle(true)
         }
     }
+
+    const scrollToBottom = () => {
+        window.scrollTo({
+          top: document.body.scrollHeight,
+          behavior: 'smooth',
+        });
+      };
 
     return (
         <>
@@ -58,15 +69,17 @@ const SideNav = (props) => {
                     />
                     </div>
                     <div>
-                        <div className='sidePanelAnchor' onClick={() => {navigate('/about'); props.hide()}}>
+                        <div className='sidePanelAnchor' onClick={() => { handleClick();}}>
                             About Us
                         </div>
-                        <div className='sidePanelAnchor' onClick={() => {navigate('/'); props.hide()}}>
-                            Opportunities
-                        </div>
-                        <div className='sidePanelAnchor' onClick={() => {navigate('/'); props.hide()}}>
+                        <a href="/about" style={{textDecoration : 'none'}}>
+                            <div className='sidePanelAnchor' onClick={() => {props.hide()}}>
+                                Opportunities
+                            </div>
+                        </a>
+                        {/* <div className='sidePanelAnchor' onClick={() => {navigate('/'); props.hide()}}>
                             How it works
-                        </div>
+                        </div> */}
                         <div className='sidePanelAnchorDropdown' onClick={() => openProfileNav()}>
                             <span style={{ whiteSpace: "nowrap", color: "#1a1a1a" }}>Resources</span>
                             <div className={toggle ? "dropUp" : "dropdown"}>
@@ -80,9 +93,8 @@ const SideNav = (props) => {
                         </div>
 
                         <div className={toggle ? "profileNav" : "block1"}>
-                            <Link className='proflink' to="/my-profile" style={{ color: "#1a1a1a", padding:"6px 8px 12px 16px" }}>Profile Details</Link>
-                            <Link className='proflink' to="/manage-addresses" style={{ color: "#1a1a1a", padding: "6px 8px 12px 16px" }}>Manage Addresses</Link>
-                        </div>
+                        <div className='proflink' onClick={() => {scrollToBottom(); props.hide()}} style={{ color: "#1a1a1a", padding:"6px 8px 12px 16px" }}>Contact Us</div>
+                         </div>
                         {/* <a href="/" style={{'textDecoration':'none'}}> */}
                         {props.loggedIn && <div className='sidePanelAnchor' 
                             onClick={() => props.logout()}

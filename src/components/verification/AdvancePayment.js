@@ -12,8 +12,8 @@ const AdvancePayment = (props) => {
     });
     const [advancePaymentFormData, setAdvancePaymentFormData] = useState(
         {
-            invAmt: '',
-            advAmt: ''
+            invAmt: props && props.count ? props.count * 1000000 : '',
+            advAmt: props && props.count ? (props.count * 1000000)/10 : ''
         }
     );
 
@@ -27,14 +27,14 @@ const AdvancePayment = (props) => {
     };
 
     const bankDetailsSubmit = () => {
-        if (!advancePaymentFormData.invAmt || advancePaymentFormData.invAmt.trim() === '') {
-          setToastConfig({ ...toastConfig, show: true, text: 'Please Enter Investment Amount' });
-        } 
-        else if(!advancePaymentFormData.advAmt || advancePaymentFormData.advAmt.trim() === '') {
-            setToastConfig({ ...toastConfig, show: true, text: 'Please Enter Advance Payment' });
-        } else {
+        // if (!advancePaymentFormData.invAmt || advancePaymentFormData.invAmt.trim() === '') {
+        //   setToastConfig({ ...toastConfig, show: true, text: 'Please Enter Investment Amount' });
+        // } 
+        // else if(!advancePaymentFormData.advAmt || advancePaymentFormData.advAmt.trim() === '') {
+        //     setToastConfig({ ...toastConfig, show: true, text: 'Please Enter Advance Payment' });
+        // } else {
             props.descriptionButtonHandler(advancePaymentFormData);
-        }
+        // }
     }
 
 return (
@@ -49,7 +49,9 @@ return (
                         <input
                             type="text"
                             name="invAmt"
-                            // value=""
+                            value={advancePaymentFormData.invAmt}
+                            style={{backgroundColor: '#f2f2f2', cursor : 'not-allowed'}}
+                            disabled
                             className='mobile-input'
                             placeholder="Enter Investment Amount"
                             onChange={handleInputChange}
@@ -59,7 +61,9 @@ return (
                         <input
                             type="tel"
                             name="advAmt"
-                            // value=""
+                            style={{backgroundColor: '#f2f2f2', cursor : 'not-allowed'}}
+                            value={advancePaymentFormData.advAmt}
+                            disabled
                             className='mobile-input'
                             placeholder="Enter Advance Payment"
                             onChange={handleInputChange}
@@ -68,7 +72,7 @@ return (
                         <div className="info-note-txt">Note: You will redirected to the payment page</div>
 
                         <button 
-                            style={(((advancePaymentFormData.invAmt.length < 1 || advancePaymentFormData.advAmt.length < 1) && props.step === props.steps.ADVANCE_PAYMENT_SCREEN)) ? {opacity:  '0.4'} : {opacity : 'unset'}} 
+                            // style={(((advancePaymentFormData.invAmt.length < 1 || advancePaymentFormData.advAmt.length < 1) && props.step === props.steps.ADVANCE_PAYMENT_SCREEN)) ? {opacity:  '0.4'} : {opacity : 'unset'}} 
                             className="signup-continue-btn" 
                                 onClick={() => bankDetailsSubmit()}
                             >

@@ -7,6 +7,8 @@ const DetailPage = (props) => {
     const location = useLocation();
     const navigate = useNavigate();
     const { propertyInfo } = location.state || {};
+    const { mainData } = location.state || {};
+    const [currentImg, setCurrentImg] = useState("");
 
     // console.log("propertyInfo ========= ",propertyInfo);
 
@@ -17,7 +19,7 @@ const DetailPage = (props) => {
         }
     }, [propertyInfo, navigate]);
     
-    const [count, setCount] = useState(0);
+    const [count, setCount] = useState(1);
 
     const IncrementUnit = () => {
         if (count < 10) {
@@ -122,13 +124,20 @@ return (
             <div className="detailPage-content-wrapper">
                 <div className="appreciation-main-root">
                     <div className="appreciation-details-container">
-                        <img src="../assets/sean-pollock.png" alt="banner" className="appreciation-details-img" />
+                        <img src={currentImg ? currentImg : mainData.main_image ? mainData.main_image : ""} alt="banner" className="appreciation-details-img" />
                         <div className="appreciation-details-subcontainer desk-section-img-display">
+                            {
+                                mainData && mainData.images && mainData.images.length > 0 && mainData.images.map((img, index) =>{
+                                    return(
+                                        <img key={index} src={img} alt="banner" className="appreciation-details-small-img" onClick={() => {setCurrentImg(img)}}/>
+                                    )
+                                })
+                            }
+                            {/* <img src="../assets/sean-pollockunsplash.png" alt="banner" className="appreciation-details-small-img" />
                             <img src="../assets/sean-pollockunsplash.png" alt="banner" className="appreciation-details-small-img" />
                             <img src="../assets/sean-pollockunsplash.png" alt="banner" className="appreciation-details-small-img" />
                             <img src="../assets/sean-pollockunsplash.png" alt="banner" className="appreciation-details-small-img" />
-                            <img src="../assets/sean-pollockunsplash.png" alt="banner" className="appreciation-details-small-img" />
-                            <img src="../assets/sean-pollockunsplash.png" alt="banner" className="appreciation-details-small-img" />
+                            <img src="../assets/sean-pollockunsplash.png" alt="banner" className="appreciation-details-small-img" /> */}
                         </div>
                     </div>
 
@@ -160,7 +169,7 @@ return (
                                 </div>
                             </div>
 
-                            <button onClick={() => navigate('/verification')} className="appreciation-investment-now-btn">Invest Now</button>
+                            <button onClick={() => navigate('/verification', {state : {count}})} className="appreciation-investment-now-btn">Invest Now</button>
                         </div>
                     </div>
                 </div>
@@ -171,19 +180,19 @@ return (
                     <table className="capital-appreciation-table">
                         <tr>
                             <th></th>
-                            <th>Year 0</th>
-                            <th>Year 1</th>
-                            <th>Year 2</th>
-                            <th>Year 3</th>
-                            <th>Year 4</th>
-                            <th>Year 5</th>
+                            <th>Investment Value</th>
+                            <th>Yields</th>
+                            <th>Additional Yields</th>
+                            <th>Liquidated Value</th>
+                            <th>Total Cash Flow</th>
+                            <th>Net IRR</th>
                         </tr>
                         {propertyInfo?.investment_return.map((ele, index) => {
                             const newKey = ['Investment Value', 'Yields', 'Additional Yields', 'Liquidated Value', 'Total Cash Flow', 'Net IRR'];
                             const item  = newKey[index];
                             return (
                             <tr key={index}>
-                                <td className="appreciation-table-strong">{item}</td>
+                                <td className="appreciation-table-strong">{`Year ${index + 1}`}</td>
                                 <td>{ele.investment_value}</td>
                                 <td>{ele.yield}</td>
                                 <td>{ele.additional_yield}</td>
