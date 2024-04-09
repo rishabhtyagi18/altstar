@@ -267,7 +267,7 @@ return (
                                 {/* <div className="arrow-recommendations-root-left"><img src="../assets/vector.png" alt="arrow" className="arrow-recommendations-left" /></div> */}
                                 {resultData?.map((ele, index) => (
                                     <div className="recommendations-content-internal-root" key={ele.id}>
-                                        <img src="../assets/mask_group.png" alt="img" className="recommendations-img" />
+                                        <img src={ele.main_image} alt="img" className="recommendations-img" />
                                         
                                         <div className="recommendations-property-container">
                                             <div className="recommendations-property-txt">{ele.property_info?.name}</div>
